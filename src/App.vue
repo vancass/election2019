@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div class="map-type">
-      <div class="map-type--choice" v-for="type in mapTypes" :key="type">
+      <div class="map-type--choice" v-for="type in mapTypes" :key="type" :class="{'type-selected' : typeSelected === type}">
         <input type="radio" name="nav" :id="type" :value="type" v-model="typeSelected"/>
-        <label class="map-type--label" :for="type" :class="{'type-selected' : typeSelected === type}">{{type}}</label>
+        <label class="map-type--label" :for="type" >{{type}}</label>
       </div>
     </div>
     
@@ -68,12 +68,12 @@ export default {
       },
       currentStrokeColor: '3d3213',
       mapTypes: [
-        '2019 percentage',
-        '2014-2019 Jokowi\'s vote difference',
-        '2014-2019 Prabowo\'s vote difference',
+        '2019 overall percentage',
+        '2014-2019 Jokowi\'s vote differences',
+        '2014-2019 Prabowo\'s vote differences',
         '2014-2019 overall difference'
       ],
-      typeSelected: '2019 percentage'
+      typeSelected: '2019 overall percentage'
     }
   },
   computed: {
@@ -103,6 +103,7 @@ export default {
 @import "../node_modules/leaflet/dist/leaflet.css";
 body {
   background-color: #e7d090;
+  font-family: 'Lato', sans-serif;
 }
 
 #map {
@@ -112,33 +113,33 @@ body {
 .map-type {
   display: flex;
   flex-direction: row;
-  
+  justify-content: center;
 }
 
 .map-type--choice {
+  min-height: 100%;
+  max-width: 250px;
   display: inline-block;
   margin-right: 10px;
   text-align: center;
-  align-content:center;
-  align-self: center;
+  background-color: white;
+  color: #212b36;
 }
 
 .map-type--label {
-  /* border-radius: 10px; */
-  margin-top: 20px;
+  height: 100%;
   padding: 12px;
-  min-height: 50px;
-  max-width: 200px;
-  color: #212b36;
   font-size: 16px;
   line-height: 22px;
-  background-color: white;
-  display: inline-block;
+  display: block;
 }
 
-.map-type--label:hover {
+.map-type--label {
   cursor: pointer;
-  background-color: #4e4d86;
+}
+
+.map-type--choice:hover {
+  background-color: #800080;
   color: white;
   transition-property: background-color;
   transition-duration: 0.3s;
@@ -149,7 +150,7 @@ input[type='radio'] {
 }
 
 .type-selected {
-  background-color: #4e4d86;
+  background-color: #800080;
   color: white;
   transition-property: background-color;
   transition-duration: 0.3s;
