@@ -1,6 +1,13 @@
 <template>
   <div id="app">
-    <l-map :center="[-0.7893, 113.9213]" :zoom="5" style="height: 500px;" :options="mapOptions">
+    <div class="map-type">
+      <div class="map-type--choice" v-for="type in mapTypes" :key="type">
+        <input type="radio" name="nav" :id="type" :value="type" v-model="typeSelected"/>
+        <label class="map-type--label" :for="type" :class="{'type-selected' : typeSelected === type}">{{type}}</label>
+      </div>
+    </div>
+    
+    <l-map :center="[-0.7893, 113.9213]" :zoom="5" style="height: 500px;margin-top: 10px;" :options="mapOptions">
       <l-choropleth-layer 
         :data="electionResult" 
         titleKey="provinceName" 
@@ -8,12 +15,14 @@
         :value="value" 
         :extraValues="extraValues" 
         geojsonIdKey="code_hasc" 
-        :geojson="indonesiaGeoJson" 
+        :geojson="indonesiaGeoJson"
+        :colorScale="colorScale"
         :colorScale1="colorScale1" 
         :colorScale2="colorScale2"
+        :twoColor=true
       >
         <template slot-scope="props">
-          <l-info-control :item="props.currentItem" :unit="props.unit" title="Department" placeholder="Hover over a department"/>
+          <l-info-control :item="props.currentItem" :unit="props.unit" title="" placeholder="Hover for more info"/>
           <!-- <l-reference-chart title="Girls school enrolment" :colorScale="colorScale" :min="props.min" :max="props.max" position="topright"/> -->
         </template>
       </l-choropleth-layer>
@@ -40,14 +49,16 @@ export default {
   },
   data() {
     return {
+      type: 0,
       electionResult,
       indonesiaGeoJson,
+      colorScale: ["00FF00", "008000", "008000"],
       colorScale1: ["FFBFBF", "FF3030", "400000"],
       colorScale2: ["BFBFFF", "3030FF", "000040"],
-      value: {
-        key: "result2014.jokowi.percentage",
-        metric: "% Jokowi"
-      },
+      // value: {
+      //   key: "voteDifference.overall",
+      //   metric: "% Jokowi"
+      // },
       extraValues: [{
         key: "result2014.prabowo.percentage",
         metric: "% Prabowo"
@@ -55,21 +66,92 @@ export default {
       mapOptions: {
         attributionControl: false
       },
-      currentStrokeColor: '3d3213'
+      currentStrokeColor: '3d3213',
+      mapTypes: [
+        '2019 percentage',
+        '2014-2019 Jokowi\'s vote difference',
+        '2014-2019 Prabowo\'s vote difference',
+        '2014-2019 overall difference'
+      ],
+      typeSelected: '2019 percentage'
     }
   },
+  computed: {
+    value() {
+      let key = '', metric = '';
+
+      switch(this.type){
+        case 0:
+          key = 'result2014.jokowi.percentage';
+          metric = '% Jokowi';
+        break;
+
+        case 1:
+          key= 'voteDifference.overall';
+          metric = '';
+        break;
+      }
+      return {
+        key: key,
+        metric: metric
+      }
+    }
+  }
 }
 </script>
 <style>
 @import "../node_modules/leaflet/dist/leaflet.css";
 body {
   background-color: #e7d090;
-  /* margin-left: 100px;
-  margin-right: 100px; */
-  /* width: 100%; */
 }
 
 #map {
   background-color: #eee;
+}
+
+.map-type {
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.map-type--choice {
+  display: inline-block;
+  margin-right: 10px;
+  text-align: center;
+  align-content:center;
+  align-self: center;
+}
+
+.map-type--label {
+  /* border-radius: 10px; */
+  margin-top: 20px;
+  padding: 12px;
+  min-height: 50px;
+  max-width: 200px;
+  color: #212b36;
+  font-size: 16px;
+  line-height: 22px;
+  background-color: white;
+  display: inline-block;
+}
+
+.map-type--label:hover {
+  cursor: pointer;
+  background-color: #4e4d86;
+  color: white;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+.type-selected {
+  background-color: #4e4d86;
+  color: white;
+  transition-property: background-color;
+  transition-duration: 0.3s;
 }
 </style>

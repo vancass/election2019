@@ -1,16 +1,17 @@
 <template>
   <div>
     <l-geo-json :geojson="geojsonData.geojson" :options="geojsonOptions" :options-style="styleFunction" ref="geolayer"></l-geo-json>
-    <slot :currentItem="currentItem" :unit="value.metric" :min="min1" :max="max1"></slot>
+    <slot :currentItem="currentItem" :unit="value.metric" :min="percentageMinJokowi" :max="percentageMaxJokowi"></slot>
   </div>
 </template>
 <script>
 
 import {LGeoJson} from "vue2-leaflet"
 import chroma from "chroma-js"
-import { getMin, getMax, normalizeValue, validNumber } from "../util"
+import { normalizeValue, validNumber } from "../util"
 
 function mouseover({ target }) {
+  // eslint-disable-next-line
   if (!L.Browser.ie && !L.Browser.opera) {
     target.bringToFront()
   }
@@ -66,7 +67,7 @@ function getValue(obj, key) {
   return result;
 }
 
-function getColor(param, colorScale1, colorScale2, min1, max1, min2, max2) {
+function getTwoColors(param, colorScale1, colorScale2, min1, max1, min2, max2) {
   let colorScale = colorScale1, realMin = min1, realMax = max1, realParam = param;
 
   if (realParam > 50) {
@@ -78,14 +79,20 @@ function getColor(param, colorScale1, colorScale2, min1, max1, min2, max2) {
     realParam = 100 - param;
   }
   
-  console.log(`realParam: ${realParam}, min: ${realMin}, max: ${realMax}`);
   let test = chroma
     .scale(colorScale)
     .mode("lch")(normalizeValue(realParam, realMin, realMax))
     .hex();
 
-  console.log('test :', test);
   return test;
+}
+
+function getOneColor(param, colorScale, min, max) {
+  // console.log(`param: ${param} min: ${min} max: ${max}`);
+  return chroma
+    .scale(colorScale)
+    .mode("lch")(normalizeValue(param, min, max))
+    .hex();
 }
 
 export default {
@@ -93,6 +100,7 @@ export default {
     geojson: Object,
     data: Array,
     center: Array,
+    colorScale: Array,
     colorScale1: Array,
     colorScale2: Array,
     titleKey: String,
@@ -100,6 +108,7 @@ export default {
     value: Object,
     extraValues: Array,
     geojsonIdKey: String,
+    twoColor: Boolean,
     mapStyle: Object,
     zoom: Number,
     mapOptions: Object,
@@ -120,20 +129,30 @@ export default {
     }  
   },
   computed: {
-    min1() {
-      const result = Math.min(...this.geojsonData.data.filter(x => validNumber(getValue(x, this.value.key))).map(x => Number(getValue(x, this.value.key))));
+    percentageMinJokowi() {
+      const result = Math.min(...this.geojsonData.data.filter(x => validNumber(getValue(x, this.value.key)) && getValue(x, this.value.key) > 50).map(x => Number(getValue(x, this.value.key))));
       return result;
     },
-    max1() {
-      const result = Math.max(...this.geojsonData.data.filter(x => validNumber(getValue(x, this.value.key))).map(x => Number(getValue(x, this.value.key))));
+    percentageMaxJokowi() {
+      const result = Math.max(...this.geojsonData.data.filter(x => validNumber(getValue(x, this.value.key)) && getValue(x, this.value.key) > 50).map(x => Number(getValue(x, this.value.key))));
       return result;
     },
-    min2() {
-      const result = Math.min(...this.geojsonData.data.filter(x => validNumber(getValue(x, this.value.key))).map(x => Number(100-getValue(x, this.value.key))));
+    percentageMinPrabowo() {
+      const result = Math.min(...this.geojsonData.data.filter(x => validNumber(getValue(x, this.extraValues[0].key)) && getValue(x, this.extraValues[0].key) > 50).map(x => Number(getValue(x, this.extraValues[0].key))));
       return result;
     },
-    max2() {
-      const result = Math.max(...this.geojsonData.data.filter(x => validNumber(getValue(x, this.value.key))).map(x => Number(100-getValue(x, this.value.key))));
+    percentageMaxPrabowo() {
+      const result = Math.max(...this.geojsonData.data.filter(x => validNumber(getValue(x, this.extraValues[0].key)) && getValue(x, this.extraValues[0].key) > 50).map(x => Number(getValue(x, this.extraValues[0].key))));
+      return result;
+    },
+    min() {
+      const data = this.geojsonData.data.map(x => Number(getValue(x, this.value.key)));
+      const result = Math.min(...data);
+      return result;
+    },
+    max() {
+      const data = this.geojsonData.data.map(x => Number(getValue(x, this.value.key)));
+      const result = Math.max(...data);
       return result;
     },
     geojsonData() {
@@ -152,7 +171,7 @@ export default {
     styleFunction() {
       return (feature) => {
         let itemGeoJSONID = feature.properties[this.geojsonIdKey];
-        let color = "NONE";
+        let fillColor = '';
         const {data} = this.geojsonData;
         let item = data.find(x => x[this.idKey] === itemGeoJSONID);
 
@@ -169,7 +188,15 @@ export default {
             weight: this.strokeWidth
           }
         }
-        const { min1, max1, min2, max2 } = this;
+        const { percentageMinJokowi, percentageMaxJokowi, percentageMinPrabowo, percentageMaxPrabowo, min, max } = this;
+
+        // console.log('this.twoColor :', this.twoColor);
+        if (this.twoColor) {
+          fillColor = getTwoColors(valueParam, this.colorScale1, this.colorScale2, percentageMinJokowi, percentageMaxJokowi, percentageMinPrabowo, percentageMaxPrabowo);
+        }
+        else {
+          fillColor = getOneColor(valueParam, this.colorScale, min, max);
+        }
 
         return {
           weight: this.strokeWidth,
@@ -177,7 +204,7 @@ export default {
           color: `#${this.strokeColor}`,
           dashArray: "3",
           fillOpacity: 0.7,
-          fillColor: getColor(valueParam, this.colorScale1, this.colorScale2, min1, max1, min2, max2)
+          fillColor: fillColor
         }
       };
     },
