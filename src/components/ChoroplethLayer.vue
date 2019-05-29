@@ -28,7 +28,7 @@ function mouseover({ target }) {
       color: `#${this.currentStrokeColor}`,
       dashArray: "",
       fillOpacity: 0.7,
-      fillColor: "#FFFFC0"
+      // fillColor: "#FFFFC0"
     })
     
     
@@ -115,7 +115,7 @@ export default {
     strokeColor: {type: String, default: 'fff'},
     currentStrokeColor: {type: String, default:'666'},
     strokeWidth: {type: Number, default: 1},
-    currentStrokeWidth: {type: Number, default: 1}
+    currentStrokeWidth: {type: Number, default: 3}
   },
   mounted() {
     if (this.$parent._isMounted) {

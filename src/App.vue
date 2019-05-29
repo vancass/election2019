@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div class="map-type">
-      <div class="map-type--choice" v-for="type in mapTypes" :key="type" :class="{'type-selected' : typeSelected === type}">
-        <input type="radio" name="nav" :id="type" :value="type" v-model="typeSelected"/>
+      <div class="map-type--choice" v-for="(type, index) in mapTypes" :key="index" :class="{'type-selected' : typeSelected === index}">
+        <input type="radio" name="nav" :id="type" :value="index" v-model="typeSelected"/>
         <label class="map-type--label" :for="type" >{{type}}</label>
       </div>
     </div>
@@ -66,14 +66,14 @@ export default {
       mapOptions: {
         attributionControl: false
       },
-      currentStrokeColor: '3d3213',
+      // currentStrokeColor: '3d3213',
       mapTypes: [
         '2019 overall percentage',
         '2014-2019 Jokowi\'s vote differences',
         '2014-2019 Prabowo\'s vote differences',
         '2014-2019 overall difference'
       ],
-      typeSelected: '2019 overall percentage'
+      typeSelected: 0
     }
   },
   computed: {
