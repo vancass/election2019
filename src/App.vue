@@ -18,10 +18,10 @@
         :value="value[0]" 
         :extraValues="extraValues" 
         :geojson="indonesiaGeoJson"
-        :colorScale="colorScale1"
-        :colorScale1="colorScale1" 
-        :colorScale2="colorScale2"
-        :twoColor="twoColor"
+        :colorScale1="colorScaleRed" 
+        :colorScale2="colorScaleBlue"
+        :twoColor=true
+        :compareTwoValues=true
       >
         <template slot-scope="props">
           <l-info-control :item="props.currentItem" :unit="props.unit" title="" placeholder="Hover for more info"/>
@@ -38,10 +38,50 @@
         :extraValues="extraValues" 
         geojsonIdKey="code_hasc" 
         :geojson="indonesiaGeoJson"
-        :colorScale="colorScale2"
-        :colorScale1="colorScale1" 
-        :colorScale2="colorScale2"
-        :twoColor="twoColor"
+        :colorScale1="colorScaleGreen" 
+        :colorScale2="colorScaleRed"
+        :twoColor=true
+        :compareTwoValues=false
+      >
+        <template slot-scope="props">
+          <l-info-control :item="props.currentItem" :unit="props.unit" title="" placeholder="Hover for more info"/>
+          <!-- <l-reference-chart title="Girls school enrolment" :colorScale="colorScale" :min="props.min" :max="props.max" position="topright"/> -->
+        </template>
+      </l-choropleth-layer>
+      <l-choropleth-layer 
+        v-if="typeSelected == 2"
+        :key=2
+        :data="electionResult" 
+        titleKey="provinceName" 
+        idKey="provinceIso" 
+        :value="value[2]" 
+        :extraValues="extraValues" 
+        geojsonIdKey="code_hasc" 
+        :geojson="indonesiaGeoJson"
+        :colorScale1="colorScaleGreen2" 
+        :colorScale2="colorScaleRed"
+        :twoColor=true
+        :compareTwoValues=false
+      >
+        <template slot-scope="props">
+          <l-info-control :item="props.currentItem" :unit="props.unit" title="" placeholder="Hover for more info"/>
+          <!-- <l-reference-chart title="Girls school enrolment" :colorScale="colorScale" :min="props.min" :max="props.max" position="topright"/> -->
+        </template>
+      </l-choropleth-layer>
+      <l-choropleth-layer 
+        v-if="typeSelected == 3"
+        :key=3
+        :data="electionResult" 
+        titleKey="provinceName" 
+        idKey="provinceIso" 
+        :value="value[3]" 
+        :extraValues="extraValues" 
+        geojsonIdKey="code_hasc" 
+        :geojson="indonesiaGeoJson"
+        :colorScale1="colorScaleGreen" 
+        :colorScale2="colorScaleRed"
+        :twoColor=true
+        :compareTwoValues=false
       >
         <template slot-scope="props">
           <l-info-control :item="props.currentItem" :unit="props.unit" title="" placeholder="Hover for more info"/>
@@ -74,9 +114,10 @@ export default {
       type: 0,
       electionResult,
       indonesiaGeoJson,
-      colorScale: ["00FF00", "008000", "008000"],
-      colorScale1: ["FFBFBF", "FF3030", "400000"],
-      colorScale2: ["BFBFFF", "3030FF", "000040"],
+      colorScaleGreen: ["00FF00", "008000", "008000"],
+      colorScaleGreen2: ["BFFFBF", "00FF00", "008000"],
+      colorScaleRed: ["FFBFBF", "FF3030", "400000"],
+      colorScaleBlue: ["BFBFFF", "3030FF", "000040"],
       colorScaleJokowi: ["BFBFFF", "BFBFFF", "000040"],
       mapOptions: {
         attributionControl: false
@@ -84,64 +125,37 @@ export default {
       // currentStrokeColor: '3d3213',
       mapTypes: [
         '2019 overall percentage',
-        '2019 Jokowi',
-        '2014-2019 Jokowi\'s vote differences',
-        '2014-2019 Prabowo\'s vote differences',
-        '2014-2019 overall difference'
+        // '2019 Jokowi',
+        '2014-2019 Jokowi\'s votes difference',
+        '2014-2019 Prabowo\'s votes difference',
+        '2014-2019 overall votes increase'
       ],
       typeSelected: 0,
-      twoColor: false,
       value: [
         {
-          key: 'result2019.prabowo.votes',
+          key: 'result2019.jokowi.percentage',
+          metric: '% Jokowi'
+        },
+        {
+          key: 'voteDifference.jokowi',
           metric: 'votes'
         },
         {
-          key: 'result2019.jokowi.votes',
+          key: 'voteDifference.prabowo',
           metric: 'votes'
         },
         {
-          key: 'result2019.prabowo.votes',
+          key: 'voteDifference.overall',
           metric: 'votes'
         },
       ],
-      value2: {
-        key: 'result2019.jokowi.votes',
-        metric: 'votes'
-      }
+      extraValues: [{
+        key: 'result2019.prabowo.percentage',
+        metric: '% Prabowo'
+      }]
     }
   },
   computed: {
-    // value() {
-    //   let key = '', metric = '';
-
-    //   switch(this.typeSelected){
-    //     case 0:
-    //       key = 'result2019.prabowo.votes';
-    //       metric = 'votes';
-    //     break;
-
-    //     case 1:
-    //       key = 'result2019.jokowi.votes';
-    //       metric = ' votes';
-    //     break;
-
-    //     case 2:
-    //       key= 'voteDifference.overall';
-    //       metric = '';
-    //     break;
-    //   }
-    //   return {
-    //     key: key,
-    //     metric: metric
-    //   }
-    // },
-    extraValues() {
-      return [{
-        key: "result2014.prabowo.percentage",
-        metric: "% Prabowo"
-      }]
-    }
   }
 }
 </script>

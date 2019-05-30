@@ -1,7 +1,7 @@
 <template>
   <div>
     <l-geo-json :geojson="geojsonData.geojson" :options="geojsonOptions" :options-style="styleFunction" ref="geolayer"></l-geo-json>
-    <slot :currentItem="currentItem" :unit="value.metric" :min="percentageMinJokowi" :max="percentageMaxJokowi"></slot>
+    <slot :currentItem="currentItem" :unit="value.metric" :min="percentageMin1" :max="percentageMax1"></slot>
   </div>
 </template>
 <script>
@@ -36,8 +36,9 @@ function mouseover({ target }) {
       let tempValues = []
       for (let x of this.extraValues) {
         tempValues.push({
+          metricBefore: x.metricBefore,
           value: getValue(item, x.key),
-          metric: x.metric
+          metricAfter: x.metricAfter
         })
       }
       tempItem = { ...tempItem, extraValues: tempValues }
@@ -67,7 +68,7 @@ function getValue(obj, key) {
   return result;
 }
 
-function getTwoColors(param, colorScale1, colorScale2, min1, max1, min2, max2) {
+function getTwoColorsPercentage(param, colorScale1, colorScale2, min1, max1, min2, max2) {
   let colorScale = colorScale1, realMin = min1, realMax = max1, realParam = param;
 
   if (realParam > 50) {
@@ -87,6 +88,25 @@ function getTwoColors(param, colorScale1, colorScale2, min1, max1, min2, max2) {
   return test;
 }
 
+function getTwoColors(param, colorScale1, colorScale2, min1, max1, min2, max2) {
+  let colorScale = colorScale1, realMin = min1, realMax = max1, realParam = param;
+
+  if (realParam < 0) {
+    colorScale = colorScale2;
+    realMin = min2;
+    realMax = max2;
+    realParam = param*-1;
+  }
+  
+  let test = chroma
+    .scale(colorScale)
+    .mode("lch")(normalizeValue(realParam, realMin, realMax))
+    .hex();
+
+
+  return test;
+}
+
 function getOneColor(param, colorScale, min, max) {
   // console.log(`param: ${param} min: ${min} max: ${max}`);
   return chroma
@@ -100,7 +120,6 @@ export default {
     geojson: Object,
     data: Array,
     center: Array,
-    colorScale: Array,
     colorScale1: Array,
     colorScale2: Array,
     titleKey: String,
@@ -115,7 +134,8 @@ export default {
     strokeColor: {type: String, default: 'fff'},
     currentStrokeColor: {type: String, default:'666'},
     strokeWidth: {type: Number, default: 1},
-    currentStrokeWidth: {type: Number, default: 3}
+    currentStrokeWidth: {type: Number, default: 3},
+    compareTwoValues: Boolean
   },
   mounted() {
     if (this.$parent._isMounted) {
@@ -129,21 +149,41 @@ export default {
     }  
   },
   computed: {
-    percentageMinJokowi() {
-      const result = Math.min(...this.geojsonData.data.filter(x => validNumber(getValue(x, this.value.key)) && getValue(x, this.value.key) > 50).map(x => Number(getValue(x, this.value.key))));
-      return result;
+    positiveData() {
+      return this.geojsonData.data.filter(x => validNumber(getValue(x, this.value.key)) && getValue(x, this.value.key) > 0).map(x => Number(getValue(x, this.value.key)));
     },
-    percentageMaxJokowi() {
-      const result = Math.max(...this.geojsonData.data.filter(x => validNumber(getValue(x, this.value.key)) && getValue(x, this.value.key) > 50).map(x => Number(getValue(x, this.value.key))));
-      return result;
+    negativeData() {
+      return this.geojsonData.data.filter(x => validNumber(getValue(x, this.value.key)) && getValue(x, this.value.key) < 0).map(x => Number(getValue(x, this.value.key))*-1);
     },
-    percentageMinPrabowo() {
-      const result = Math.min(...this.geojsonData.data.filter(x => validNumber(getValue(x, this.extraValues[0].key)) && getValue(x, this.extraValues[0].key) > 50).map(x => Number(getValue(x, this.extraValues[0].key))));
-      return result;
+    percentageData1() {
+      return this.geojsonData.data.filter(x => validNumber(getValue(x, this.value.key)) && getValue(x, this.value.key) > 50).map(x => Number(getValue(x, this.value.key)));
     },
-    percentageMaxPrabowo() {
-      const result = Math.max(...this.geojsonData.data.filter(x => validNumber(getValue(x, this.extraValues[0].key)) && getValue(x, this.extraValues[0].key) > 50).map(x => Number(getValue(x, this.extraValues[0].key))));
-      return result;
+    percentageData2() {
+      return this.geojsonData.data.filter(x => validNumber(getValue(x, this.extraValues[0].key)) && getValue(x, this.extraValues[0].key) > 50).map(x => Number(getValue(x, this.extraValues[0].key)));
+    },
+    positiveMin() {
+      return Math.min(...this.positiveData);
+    },
+    positiveMax() {
+      return Math.max(...this.positiveData);
+    },
+    negativeMin() {
+      return Math.min(...this.negativeData);
+    },
+    negativeMax() {
+      return Math.max(...this.negativeData);
+    },
+    percentageMin1() {
+      return Math.min(...this.percentageData1);
+    },
+    percentageMax1() {
+      return Math.max(...this.percentageData1);
+    },
+    percentageMin2() {
+      return Math.min(...this.percentageData2);
+    },
+    percentageMax2() {
+      return Math.max(...this.percentageData2);
     },
     min() {
       const data = this.geojsonData.data.map(x => Number(getValue(x, this.value.key)));
@@ -188,14 +228,16 @@ export default {
             weight: this.strokeWidth
           }
         }
-        const { percentageMinJokowi, percentageMaxJokowi, percentageMinPrabowo, percentageMaxPrabowo, min, max } = this;
+        const { percentageMin1, percentageMax1, percentageMin2, percentageMax2, min, max, positiveMin, positiveMax, negativeMin, negativeMax } = this;
 
-        // console.log('this.twoColor :', this.twoColor);
-        if (this.twoColor) {
-          fillColor = getTwoColors(valueParam, this.colorScale1, this.colorScale2, percentageMinJokowi, percentageMaxJokowi, percentageMinPrabowo, percentageMaxPrabowo);
+        if (this.compareTwoValues) {
+          fillColor = getTwoColorsPercentage(valueParam, this.colorScale1, this.colorScale2, percentageMin1, percentageMax1, percentageMin2, percentageMax2);
+        }
+        else if (this.twoColor) {
+          fillColor = getTwoColors(valueParam, this.colorScale1, this.colorScale2, positiveMin, positiveMax, negativeMin, negativeMax);
         }
         else {
-          fillColor = getOneColor(valueParam, this.colorScale, min, max);
+          fillColor = getOneColor(valueParam, this.colorScale1, min, max);
         }
 
         return {
