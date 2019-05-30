@@ -19,11 +19,14 @@ export default {
   },
   mounted() {
     const { unit, title, placeholder, position } = this
-
+    // eslint-disable-next-line
     this.mapObject = L.control({
       position: position
     })
+
+    // eslint-disable-next-line
     this.mapObject.onAdd = function(map) {
+      // eslint-disable-next-line
       this._div = L.DomUtil.create("div", "info") // create a div with a class "info"
       this.update({ name: "", value: 0, unit, placeholder, title })
       return this._div
