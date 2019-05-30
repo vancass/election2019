@@ -74,6 +74,7 @@ export default {
     if (this.parent) {
       this.parent.removeLayer(this.mapObject)
     }
+    this.mapObject.remove();
   }
 }
 </script>
