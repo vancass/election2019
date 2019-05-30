@@ -38,7 +38,7 @@ export default {
     }) {
       if (name.length > 0) {
         this._div.innerHTML = `<h4> ${title} </h4>
-                    <b> ${name} </b><br /> ${value} ${unit}`
+                    <b> ${name} </b><br /> ${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} ${unit}`
         if (extraValues) {
           for (let x of extraValues) {
             this._div.innerHTML =
