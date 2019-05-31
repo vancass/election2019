@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import { addThousandComma } from "../util"
+
 export default {
   props: {
     /**
@@ -72,9 +74,9 @@ export default {
              */
             this._div.innerHTML = `<h4> ${title} </h4> <b> ${name} </b>`;
 
-            values.forEach( d => {
-              this._div.innerHTML = this._div.innerHTML + `<br/> ${d.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} ${d.metric}`;
-            });
+            this._div.innerHTML = this._div.innerHTML + `<br/> ${addThousandComma(values[0].value)} ${values[0].metric}`;
+            this._div.innerHTML = this._div.innerHTML + `<br/> <strong>2019:</strong> ${addThousandComma(values[1].value)}`;
+            this._div.innerHTML = this._div.innerHTML + `<br/> <strong>2014:</strong> ${addThousandComma(values[2].value)}`;
 
             break;
 
@@ -88,9 +90,9 @@ export default {
 
             this._div.innerHTML = `<h4> ${title} </h4> <b> ${name} </b>`;
 
-            values.forEach( d => {
-              this._div.innerHTML = this._div.innerHTML + `<br/> ${d.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} ${d.metric}`;
-            });
+            this._div.innerHTML = this._div.innerHTML + `<br/> ${addThousandComma(values[0].value)} increase`;
+            this._div.innerHTML = this._div.innerHTML + `<br/> ${addThousandComma(values[1].value)} ${values[1].metric}`;
+            this._div.innerHTML = this._div.innerHTML + `<br/> ${addThousandComma(values[2].value)} ${values[2].metric}`;
 
             break;
 
