@@ -1,5 +1,5 @@
 {
-  "top5jokowi": {
+  "jokowi": {
     "votes": [
       {
         "provinceNameEn": "Central Java",
@@ -108,7 +108,7 @@
         "num": -94104
       }
     ],
-    "positiveSwing": [
+    "percentageIncrease": [
       {
         "provinceNameEn": "North Sulawesi",
         "provinceNameId": "Sulawesi Utara",
@@ -135,7 +135,7 @@
         "num": 14.83
       }
     ],
-    "negativeSwing": [
+    "percentageDecrease": [
       {
         "provinceNameEn": "Aceh",
         "provinceNameId": "Aceh",
@@ -163,7 +163,7 @@
       }
     ]
   },
-  "top5prabowo": {
+  "prabowo": {
     "votes": [
       {
         "provinceNameEn": "West Java",
@@ -272,7 +272,7 @@
         "num": -400826
       }
     ],
-    "positiveSwing": [
+    "percentageIncrease": [
       {
         "provinceNameEn": "Aceh",
         "provinceNameId": "Aceh",
@@ -299,7 +299,7 @@
         "num": 11.15
       }
     ],
-    "negativeSwing": [
+    "percentageDecrease": [
       {
         "provinceNameEn": "North Sulawesi",
         "provinceNameId": "Sulawesi Utara",
