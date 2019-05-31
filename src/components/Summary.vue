@@ -47,7 +47,7 @@
                 <section class="summary-block">
                     <h3>Top 5 increase (%):</h3>
                     <ol>
-                        <li v-for="(summary, index) in summary.jokowi.percentageDecrease" :key="index">
+                        <li v-for="(summary, index) in summary.jokowi.percentageIncrease" :key="index">
                             <strong>{{summary.provinceNameEn}}</strong> <br/>{{summary.num}}%
                             
                         </li>
@@ -67,7 +67,7 @@
                     <h3>Top 5 decrease (%):</h3>
                     <ol>
                         <li v-for="(summary, index) in summary.jokowi.percentageDecrease" :key="index">
-                            <strong>{{summary.provinceNameEn}}</strong> <br/>{{summary.num}}%
+                            <strong>{{summary.provinceNameEn}}</strong> <br/>-{{summary.num}}%
                             
                         </li>
                     </ol>
@@ -88,7 +88,7 @@
                 <section class="summary-block">
                     <h3>Top 5 increase (%):</h3>
                     <ol>
-                        <li v-for="(summary, index) in summary.prabowo.percentageDecrease" :key="index">
+                        <li v-for="(summary, index) in summary.prabowo.percentageIncrease" :key="index">
                             <strong>{{summary.provinceNameEn}}</strong> <br/>{{summary.num}}%
                             
                         </li>
@@ -108,7 +108,7 @@
                     <h3>Top 5 decrease (%):</h3>
                     <ol>
                         <li v-for="(summary, index) in summary.prabowo.percentageDecrease" :key="index">
-                            <strong>{{summary.provinceNameEn}}</strong> <br/>{{summary.num}}%
+                            <strong>{{summary.provinceNameEn}}</strong> <br/>-{{summary.num}}%
                             
                         </li>
                     </ol>
@@ -129,7 +129,7 @@
                 <section class="summary-block">
                     <h3>Top 5 increase (%):</h3>
                     <ol>
-                        <li v-for="(summary, index) in summary.prabowo.percentageDecrease" :key="index">
+                        <li v-for="(summary, index) in summary.prabowo.percentageIncrease" :key="index">
                             <strong>{{summary.provinceNameEn}}</strong> <br/>{{summary.num}}%
                             
                         </li>
