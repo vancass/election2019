@@ -220,56 +220,56 @@
     ],
     "voteIncrease": [
       {
-        "provinceNameEn": "East Java",
-        "provinceNameId": "Jawa Timur",
-        "num": 4562355
-      },
-      {
-        "provinceNameEn": "Central Java",
-        "provinceNameId": "Papua",
-        "num": 3865971
-      },
-      {
         "provinceNameEn": "West Java",
-        "provinceNameId": "Nusa Tenggara Timur",
-        "num": 1220253
+        "provinceNameId": "Jawa Barat",
+        "num": 1910065
       },
       {
-        "provinceNameEn": "Papua",
-        "provinceNameId": "Papua Barat",
-        "num": 994978
+        "provinceNameEn": "South Sulawesi",
+        "provinceNameId": "Sulawesi Selatan",
+        "num": 1594536
       },
       {
-        "provinceNameEn": "East Nusa Tenggara",
-        "provinceNameId": "Nusa Tenggara Timur",
-        "num": 880906
+        "provinceNameEn": "Aceh",
+        "provinceNameId": "Aceh",
+        "num": 1311456
+      },
+      {
+        "provinceNameEn": "Banten",
+        "provinceNameId": "Banten",
+        "num": 866843
+      },
+      {
+        "provinceNameEn": "North Sumatra",
+        "provinceNameId": "Sumatra Utara",
+        "num": 756272
       }
     ],
     "voteDecrease": [
       {
-        "provinceNameEn": "Bali",
-        "provinceNameId": "Bali",
-        "num": 91.68
-      },
-      {
-        "provinceNameEn": "Papua",
-        "provinceNameId": "Papua",
-        "num": 90.66
-      },
-      {
-        "provinceNameEn": "East Nusa Tenggara",
-        "provinceNameId": "Nusa Tenggara Timur",
-        "num": 88.57
-      },
-      {
-        "provinceNameEn": "West Papua",
-        "provinceNameId": "Papua Barat",
-        "num": 79.81
+        "provinceNameEn": "East Java",
+        "provinceNameId": "Jawa Timur",
+        "num": -1835841
       },
       {
         "provinceNameEn": "Central Java",
         "provinceNameId": "Jawa Tengah",
-        "num": 77.29
+        "num": -1541273
+      },
+      {
+        "provinceNameEn": "East Nusa Tenggara",
+        "provinceNameId": "Nusa Tenggara Timur",
+        "num": -463804
+      },
+      {
+        "provinceNameEn": "Papua",
+        "provinceNameId": "Papua",
+        "num": -457780
+      },
+      {
+        "provinceNameEn": "Bali",
+        "provinceNameId": "Bali",
+        "num": -400826
       }
     ],
     "positiveSwing": [
