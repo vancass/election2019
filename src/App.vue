@@ -15,7 +15,7 @@
         titleKey="provinceName" 
         idKey="provinceIso" 
         geojsonIdKey="code_hasc" 
-        :value="value[0]" 
+        :values="values[0]" 
         :extraValues="extraValues" 
         :geojson="indonesiaGeoJson"
         :colorScale1="colorScaleRed" 
@@ -24,7 +24,7 @@
         :compareTwoValues=true
       >
         <template slot-scope="props">
-          <l-info-control :item="props.currentItem" :unit="props.unit" title="" placeholder="Hover for more info"/>
+          <l-info-control :item="props.currentItem" title="" placeholder="Hover for more info" :type="1"/>
           <!-- <l-reference-chart title="Girls school enrolment" :colorScale="colorScale" :min="props.min" :max="props.max" position="topright"/> -->
         </template>
       </l-choropleth-layer>
@@ -34,7 +34,7 @@
         :data="electionResult" 
         titleKey="provinceName" 
         idKey="provinceIso" 
-        :value="value[1]" 
+        :values="values[1]" 
         :extraValues="extraValues" 
         geojsonIdKey="code_hasc" 
         :geojson="indonesiaGeoJson"
@@ -44,7 +44,7 @@
         :compareTwoValues=false
       >
         <template slot-scope="props">
-          <l-info-control :item="props.currentItem" :unit="props.unit" title="" placeholder="Hover for more info"/>
+          <l-info-control :item="props.currentItem" title="" placeholder="Hover for more info" :type="2"/>
           <!-- <l-reference-chart title="Girls school enrolment" :colorScale="colorScale" :min="props.min" :max="props.max" position="topright"/> -->
         </template>
       </l-choropleth-layer>
@@ -54,27 +54,7 @@
         :data="electionResult" 
         titleKey="provinceName" 
         idKey="provinceIso" 
-        :value="value[2]" 
-        :extraValues="extraValues" 
-        geojsonIdKey="code_hasc" 
-        :geojson="indonesiaGeoJson"
-        :colorScale1="colorScaleGreen2" 
-        :colorScale2="colorScaleRed"
-        :twoColor=true
-        :compareTwoValues=false
-      >
-        <template slot-scope="props">
-          <l-info-control :item="props.currentItem" :unit="props.unit" title="" placeholder="Hover for more info"/>
-          <!-- <l-reference-chart title="Girls school enrolment" :colorScale="colorScale" :min="props.min" :max="props.max" position="topright"/> -->
-        </template>
-      </l-choropleth-layer>
-      <l-choropleth-layer 
-        v-if="typeSelected == 3"
-        :key=3
-        :data="electionResult" 
-        titleKey="provinceName" 
-        idKey="provinceIso" 
-        :value="value[3]" 
+        :values="values[2]" 
         :extraValues="extraValues" 
         geojsonIdKey="code_hasc" 
         :geojson="indonesiaGeoJson"
@@ -84,7 +64,27 @@
         :compareTwoValues=false
       >
         <template slot-scope="props">
-          <l-info-control :item="props.currentItem" :unit="props.unit" title="" placeholder="Hover for more info"/>
+          <l-info-control :item="props.currentItem" title="" placeholder="Hover for more info" :type="2"/>
+          <!-- <l-reference-chart title="Girls school enrolment" :colorScale="colorScale" :min="props.min" :max="props.max" position="topright"/> -->
+        </template>
+      </l-choropleth-layer>
+      <l-choropleth-layer 
+        v-if="typeSelected == 3"
+        :key=3
+        :data="electionResult" 
+        titleKey="provinceName" 
+        idKey="provinceIso" 
+        :values="values[3]" 
+        :extraValues="extraValues" 
+        geojsonIdKey="code_hasc" 
+        :geojson="indonesiaGeoJson"
+        :colorScale1="colorScaleGreen" 
+        :colorScale2="colorScaleRed"
+        :twoColor=true
+        :compareTwoValues=false
+      >
+        <template slot-scope="props">
+          <l-info-control :item="props.currentItem" title="" placeholder="Hover for more info" :type="3"/>
           <!-- <l-reference-chart title="Girls school enrolment" :colorScale="colorScale" :min="props.min" :max="props.max" position="topright"/> -->
         </template>
       </l-choropleth-layer>
@@ -131,23 +131,63 @@ export default {
         '2014-2019 overall votes increase'
       ],
       typeSelected: 0,
-      value: [
-        {
-          key: 'result2019.jokowi.percentage',
-          metric: '% Jokowi'
-        },
-        {
-          key: 'voteDifference.jokowi',
-          metric: 'votes'
-        },
-        {
-          key: 'voteDifference.prabowo',
-          metric: 'votes'
-        },
-        {
-          key: 'voteDifference.overall',
-          metric: 'votes'
-        },
+      values: [
+          [
+          {
+            key: 'result2019.jokowi.percentage',
+            metric: '% Jokowi'
+          },
+          {
+            key: 'result2019.prabowo.percentage',
+            metric: '% Prabowo'
+          },
+          {
+            key: 'voteDifference.overall',
+            metric: '% margin'
+          },
+        ],
+        [
+          {
+            key: 'voteDifference.jokowi',
+            metric: ' votes margin'
+          },
+          {
+            key: 'result2019.jokowi.votes',
+            metric: 'votes'
+          },
+          {
+            key: 'result2014.jokowi.votes',
+            metric: ' votes'
+          }
+        ],
+        [
+          {
+            key: 'voteDifference.prabowo',
+            metric: ' votes margin'
+          },
+          {
+            key: 'result2019.prabowo.votes',
+            metric: ' votes'
+          },
+          {
+            key: 'result2014.prabowo.votes',
+            metric: ' votes'
+          }
+        ],
+        [
+          {
+            key: 'voteDifference.overall',
+            metric: '% Jokowi'
+          },
+          {
+            key: 'voteDifference.jokowi',
+            metric: 'votes'
+          },
+          {
+            key: 'voteDifference.prabowo',
+            metric: 'votes'
+          }
+        ]
       ],
       extraValues: [{
         key: 'result2019.prabowo.percentage',

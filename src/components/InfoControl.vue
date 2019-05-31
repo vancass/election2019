@@ -5,8 +5,13 @@
 <script>
 export default {
   props: {
+    /**
+     * `item` is an object containing:
+     * - title
+     * - array of values (with `value` and `metric`)
+     * 
+     */
     item: Object,
-    unit: String,
     placeholder: {
       type: String,
       default: ""
@@ -15,10 +20,12 @@ export default {
     position: {
       type: String,
       default: "bottomleft"
-    }
+    },
+    type: Number
   },
   mounted() {
-    const { unit, title, placeholder, position } = this
+    const { title, placeholder, position, type } = this;
+    
     // eslint-disable-next-line
     this.mapObject = L.control({
       position: position
@@ -28,26 +35,78 @@ export default {
     this.mapObject.onAdd = function(map) {
       // eslint-disable-next-line
       this._div = L.DomUtil.create("div", "info") // create a div with a class "info"
-      this.update({ name: "", value: 0, unit, placeholder, title })
+      this.update({ name: "", values: 0, placeholder, title, type});
       return this._div
     }
+
     this.mapObject.update = function({
       name,
-      value,
-      extraValues = undefined,
-      unit,
+      values,
       title,
-      placeholder
+      placeholder,
+      type
     }) {
       if (name.length > 0) {
-        this._div.innerHTML = `<h4> ${title} </h4>
-                    <b> ${name} </b><br /> ${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} ${unit}`
-        if (extraValues) {
-          for (let x of extraValues) {
-            this._div.innerHTML =
-              this._div.innerHTML + `<br /> ${x.value} ${x.metric}`
-          }
+        switch (type) {
+          case 1:
+            /**
+            * Type 1:
+            *  % Jokowi
+            *  % Prabowo
+            *  % difference
+            */
+
+            this._div.innerHTML = `<h4> ${title} </h4> <b> ${name} </b>`;
+            values.forEach( d => {
+              this._div.innerHTML = this._div.innerHTML + `<br/> ${d.value} ${d.metric}`;
+            });
+
+            break;
+
+          case 2:
+            /**
+             * Type 2:
+             *  2019: (num)
+             *  2014: (num)
+             *  (arrow) (num) difference
+             */
+            this._div.innerHTML = `<h4> ${title} </h4> <b> ${name} </b>`;
+
+            values.forEach( d => {
+              this._div.innerHTML = this._div.innerHTML + `<br/> ${d.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} ${d.metric}`;
+            });
+
+            break;
+
+          case 3: 
+            /**
+             * Type 3:
+             *  (num) increase
+             *  (arrow) (num) Jokowi 
+             *  (arrow) (num) Prabowo
+             */
+
+            this._div.innerHTML = `<h4> ${title} </h4> <b> ${name} </b>`;
+
+            values.forEach( d => {
+              this._div.innerHTML = this._div.innerHTML + `<br/> ${d.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} ${d.metric}`;
+            });
+
+            break;
+
+          default:
+            // this._div.innerHTML = `<h4> ${title} </h4>
+            //             <b> ${name} </b><br /> ${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} ${metric}`
+            // if (extraValues) {
+            //   for (let x of extraValues) {
+            //     this._div.innerHTML =
+            //       this._div.innerHTML + `<br /> ${x.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}${x.value} ${x.metric}`
+            //   }
+            // }
+            break;
         }
+
+        
       } else {
         this._div.innerHTML = `<h4> ${title} </h4> <b> ${placeholder} </b>`
       }
@@ -67,9 +126,9 @@ export default {
     item: function(newValue) {
       this.mapObject.update({
         ...newValue,
-        unit: this.unit,
         title: this.title,
-        placeholder: this.placeholder
+        placeholder: this.placeholder,
+        type: this.type
       })
     }
   },

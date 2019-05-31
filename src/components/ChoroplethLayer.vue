@@ -1,7 +1,7 @@
 <template>
   <div>
     <l-geo-json :geojson="geojsonData.geojson" :options="geojsonOptions" :options-style="styleFunction" ref="geolayer"></l-geo-json>
-    <slot :currentItem="currentItem" :unit="value.metric" :min="percentageMin1" :max="percentageMax1"></slot>
+    <slot :currentItem="currentItem" :min="percentageMin1" :max="percentageMax1"></slot>
   </div>
 </template>
 <script>
@@ -17,12 +17,14 @@ function mouseover({ target }) {
   }
 
   let geojsonItem = target.feature.properties;
+  
+  // Find the mouseover country in the data
   let item = this.geojsonData.data.find(
     x => x[this.idKey] === (geojsonItem[this.geojsonIdKey])
   )
-  if (item) {
-    let tempItem = { name: item[this.titleKey], value: getValue(item, this.value.key), color: target.options.fillColor };
 
+  if (item) {
+    // Change the style of the selected area
     target.setStyle({
       weight: this.currentStrokeWidth,
       color: `#${this.currentStrokeColor}`,
@@ -30,22 +32,22 @@ function mouseover({ target }) {
       fillOpacity: 0.7,
       // fillColor: "#FFFFC0"
     })
-    
-    
-    if (this.extraValues) {
-      let tempValues = []
-      for (let x of this.extraValues) {
-        tempValues.push({
-          metricBefore: x.metricBefore,
-          value: getValue(item, x.key),
-          metricAfter: x.metricAfter
-        })
-      }
-      tempItem = { ...tempItem, extraValues: tempValues }
-    }
-    this.currentItem = tempItem
+
+    // let tempItem = { name: item[this.titleKey], value: getValue(item, this.value.key), color: target.options.fillColor };
+
+    let tempItem = { name: item[this.titleKey], color: target.options.fillColor};
+    let tempValues = [];
+
+    this.values.forEach(d => {
+      tempValues.push({
+        value: getValue(item, d.key),
+        metric: d.metric
+      })
+    })
+
+    tempItem = { ...tempItem, values: tempValues };
+    this.currentItem = tempItem;
   }
-  
 }
 
 function mouseout({ target }) {
@@ -89,8 +91,8 @@ function getTwoColorsPercentage(param, colorScale1, colorScale2, min1, max1, min
 }
 
 function getTwoColors(param, colorScale1, colorScale2, min1, max1, min2, max2) {
+  
   let colorScale = colorScale1, realMin = min1, realMax = max1, realParam = param;
-
   if (realParam < 0) {
     colorScale = colorScale2;
     realMin = min2;
@@ -124,7 +126,7 @@ export default {
     colorScale2: Array,
     titleKey: String,
     idKey: String,
-    value: Object,
+    values: Array,
     extraValues: Array,
     geojsonIdKey: String,
     twoColor: Boolean,
@@ -150,16 +152,16 @@ export default {
   },
   computed: {
     positiveData() {
-      return this.geojsonData.data.filter(x => validNumber(getValue(x, this.value.key)) && getValue(x, this.value.key) > 0).map(x => Number(getValue(x, this.value.key)));
+      return this.geojsonData.data.filter(x => validNumber(getValue(x, this.values[0].key)) && getValue(x, this.values[0].key) > 0).map(x => Number(getValue(x, this.values[0].key)));
     },
     negativeData() {
-      return this.geojsonData.data.filter(x => validNumber(getValue(x, this.value.key)) && getValue(x, this.value.key) < 0).map(x => Number(getValue(x, this.value.key))*-1);
+      return this.geojsonData.data.filter(x => validNumber(getValue(x, this.values[0].key)) && getValue(x, this.values[0].key) < 0).map(x => Number(getValue(x, this.values[0].key))*-1);
     },
     percentageData1() {
-      return this.geojsonData.data.filter(x => validNumber(getValue(x, this.value.key)) && getValue(x, this.value.key) > 50).map(x => Number(getValue(x, this.value.key)));
+      return this.geojsonData.data.filter(x => validNumber(getValue(x, this.values[0].key)) && getValue(x, this.values[0].key) > 50).map(x => Number(getValue(x, this.values[0].key)));
     },
     percentageData2() {
-      return this.geojsonData.data.filter(x => validNumber(getValue(x, this.extraValues[0].key)) && getValue(x, this.extraValues[0].key) > 50).map(x => Number(getValue(x, this.extraValues[0].key)));
+      return this.geojsonData.data.filter(x => validNumber(getValue(x, this.values[1].key)) && getValue(x, this.values[1].key) > 50).map(x => Number(getValue(x, this.values[1].key)));
     },
     positiveMin() {
       return Math.min(...this.positiveData);
@@ -186,12 +188,12 @@ export default {
       return Math.max(...this.percentageData2);
     },
     min() {
-      const data = this.geojsonData.data.map(x => Number(getValue(x, this.value.key)));
+      const data = this.geojsonData.data.map(x => Number(getValue(x, this.values[0].key)));
       const result = Math.min(...data);
       return result;
     },
     max() {
-      const data = this.geojsonData.data.map(x => Number(getValue(x, this.value.key)));
+      const data = this.geojsonData.data.map(x => Number(getValue(x, this.values[0].key)));
       const result = Math.max(...data);
       return result;
     },
@@ -221,7 +223,7 @@ export default {
             weight: this.strokeWidth
           }
         }
-        let valueParam = Number(getValue(item, this.value.key));
+        let valueParam = Number(getValue(item, this.values[0].key));
         if (!validNumber(valueParam)) {
           return {
             color: "white",
