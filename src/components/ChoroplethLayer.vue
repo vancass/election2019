@@ -127,7 +127,6 @@ export default {
     titleKey: String,
     idKey: String,
     values: Array,
-    extraValues: Array,
     geojsonIdKey: String,
     twoColor: Boolean,
     mapStyle: Object,

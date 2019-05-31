@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h2>Indonesian Presidential Election 2019</h2>
     <div class="map-type">
       <div class="map-type--choice" v-for="(type, index) in mapTypes" :key="index" :class="{'type-selected' : typeSelected === index}">
         <input type="radio" name="nav" :id="type" :value="index" v-model="typeSelected"/>
@@ -16,7 +17,6 @@
         idKey="provinceIso" 
         geojsonIdKey="code_hasc" 
         :values="values[0]" 
-        :extraValues="extraValues" 
         :geojson="indonesiaGeoJson"
         :colorScale1="colorScaleRed" 
         :colorScale2="colorScaleBlue"
@@ -35,7 +35,6 @@
         titleKey="provinceNameEn" 
         idKey="provinceIso" 
         :values="values[1]" 
-        :extraValues="extraValues" 
         geojsonIdKey="code_hasc" 
         :geojson="indonesiaGeoJson"
         :colorScale1="colorScaleGreen" 
@@ -55,7 +54,6 @@
         titleKey="provinceNameEn" 
         idKey="provinceIso" 
         :values="values[2]" 
-        :extraValues="extraValues" 
         geojsonIdKey="code_hasc" 
         :geojson="indonesiaGeoJson"
         :colorScale1="colorScaleGreen" 
@@ -75,7 +73,6 @@
         titleKey="provinceNameEn" 
         idKey="provinceIso" 
         :values="values[3]" 
-        :extraValues="extraValues" 
         geojsonIdKey="code_hasc" 
         :geojson="indonesiaGeoJson"
         :colorScale1="colorScaleGreen" 
@@ -89,7 +86,7 @@
         </template>
       </l-choropleth-layer>
     </l-map>
-    <Summary />
+    <Summary :type="typeSelected"/>
   </div>
 </template>
 
@@ -180,15 +177,15 @@ export default {
         [
           {
             key: 'voteDifference.overall',
-            metric: '% Jokowi'
+            metric: ' votes'
           },
           {
             key: 'voteDifference.jokowi',
-            metric: 'votes'
+            metric: ' votes'
           },
           {
             key: 'voteDifference.prabowo',
-            metric: 'votes'
+            metric: ' votes'
           }
         ]
       ]
@@ -205,6 +202,10 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+h2 {
+  text-align: center;
+}
+
 #map {
   background-color: #eee;
 }
@@ -213,6 +214,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding: 0 20px;
 }
 
 .map-type--choice {
@@ -228,7 +230,7 @@ body {
 .map-type--label {
   height: 100%;
   padding: 12px;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 22px;
   display: block;
 }
