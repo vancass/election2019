@@ -12,7 +12,7 @@
         v-if="typeSelected == 0"
         :key=0
         :data="electionResult" 
-        titleKey="provinceName" 
+        titleKey="provinceNameEn" 
         idKey="provinceIso" 
         geojsonIdKey="code_hasc" 
         :values="values[0]" 
@@ -32,7 +32,7 @@
         v-if="typeSelected == 1"
         :key=1
         :data="electionResult" 
-        titleKey="provinceName" 
+        titleKey="provinceNameEn" 
         idKey="provinceIso" 
         :values="values[1]" 
         :extraValues="extraValues" 
@@ -52,7 +52,7 @@
         v-if="typeSelected == 2"
         :key=2
         :data="electionResult" 
-        titleKey="provinceName" 
+        titleKey="provinceNameEn" 
         idKey="provinceIso" 
         :values="values[2]" 
         :extraValues="extraValues" 
@@ -72,7 +72,7 @@
         v-if="typeSelected == 3"
         :key=3
         :data="electionResult" 
-        titleKey="provinceName" 
+        titleKey="provinceNameEn" 
         idKey="provinceIso" 
         :values="values[3]" 
         :extraValues="extraValues" 
