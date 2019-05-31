@@ -7,7 +7,7 @@
       </div>
     </div>
     
-    <l-map :center="[-0.7893, 113.9213]" :zoom="5" style="height: 500px;margin-top: 10px;" :options="mapOptions">
+    <l-map :center="[-0.7893, 113.9213]" :zoom="5" style="height: 400px;margin-top: 10px;" :options="mapOptions">
       <l-choropleth-layer 
         v-if="typeSelected == 0"
         :key=0
@@ -89,6 +89,7 @@
         </template>
       </l-choropleth-layer>
     </l-map>
+    <Summary />
   </div>
 </template>
 
@@ -96,9 +97,10 @@
 import InfoControl from './components/InfoControl';
 // import ReferenceChart from './components/ReferenceChart';
 import ChoroplethLayer from './components/ChoroplethLayer';
+import Summary from './components/Summary';
 
-import indonesiaGeoJson from './data/indonesia.json'
-import electionResult from './data/election_result.json'
+import indonesiaGeoJson from './data/indonesia.json';
+import electionResult from './data/election_result.json';
 import {LMap} from 'vue2-leaflet';
 
 export default {
@@ -107,7 +109,8 @@ export default {
     LMap,
     'l-info-control': InfoControl, 
     // 'l-reference-chart': ReferenceChart, 
-    'l-choropleth-layer': ChoroplethLayer 
+    'l-choropleth-layer': ChoroplethLayer ,
+    Summary
   },
   data() {
     return {
@@ -188,11 +191,7 @@ export default {
             metric: 'votes'
           }
         ]
-      ],
-      extraValues: [{
-        key: 'result2019.prabowo.percentage',
-        metric: '% Prabowo'
-      }]
+      ]
     }
   },
   computed: {
@@ -202,7 +201,7 @@ export default {
 <style>
 @import "../node_modules/leaflet/dist/leaflet.css";
 body {
-  background-color: #e7d090;
+  background-color: #fdeece;
   font-family: 'Lato', sans-serif;
 }
 

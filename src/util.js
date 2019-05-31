@@ -21,4 +21,6 @@ export const getColor = (param, colorScale, min, max) => {
     .mode("lch")(normalizeValue(param, min, max))
     .hex()
 }
+
+export const addThousandComma = (value) => value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     
