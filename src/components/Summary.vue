@@ -1,9 +1,9 @@
 <template>
     <div>
         <section class="summary-container" v-if="type==0">
-            <h2>Summary</h2>
+            <h2>2019 Overall Summary</h2>
             <div class="summary-content">
-                <section class="summary-block jokowi-info">
+                <section class="summary-block c-blue">
                     <h3>Top 5 Jokowi  supporters (%):</h3>
                     <ol>
                         <li v-for="summary in summary.jokowi.percentage" :key="summary">
@@ -11,15 +11,7 @@
                         </li>
                     </ol>
                 </section>
-                <section class="summary-block jokowi-info">
-                    <h3>Top 5 Jokowi supporters (votes):</h3>
-                    <ol>
-                        <li v-for="summary in summary.jokowi.votes" :key="summary">
-                            <SummaryValue :name="summary.provinceNameEn" :value="addThousandComma(summary.num)"/>
-                        </li> 
-                    </ol>
-                </section>
-                <section class="summary-block prabowo-info">
+                <section class="summary-block c-red">
                     <h3>Top 5 Prabowo supporters (%):</h3>
                     <ol>
                         <li v-for="summary in summary.prabowo.percentage" :key="summary">
@@ -27,7 +19,15 @@
                         </li>
                     </ol>
                 </section>
-                <section class="summary-block prabowo-info">
+                <section class="summary-block c-blue">
+                    <h3>Top 5 Jokowi supporters (votes):</h3>
+                    <ol>
+                        <li v-for="summary in summary.jokowi.votes" :key="summary">
+                            <SummaryValue :name="summary.provinceNameEn" :value="addThousandComma(summary.num)"/>
+                        </li> 
+                    </ol>
+                </section>
+                <section class="summary-block c-red">
                     <h3>Top 5 Prabowo supporters (votes):</h3>
                     <ol>
                         <li v-for="summary in summary.prabowo.votes" :key="summary">
@@ -40,7 +40,7 @@
         <section class="summary-container" v-if="type==1">
             <h2>Jokowi 2014-2019 Summary</h2>
             <div class="summary-content">
-                <section class="summary-block">
+                <section class="summary-block c-green">
                     <h3>Top 5 increase (%):</h3>
                     <ol>
                         <li v-for="(summary, index) in summary.jokowi.percentageIncrease" :key="index">
@@ -49,7 +49,7 @@
                         </li>
                     </ol>
                 </section>
-                <section class="summary-block">
+                <section class="summary-block c-green">
                     <h3>Top 5 increase (votes):</h3>
                     <ol>
                         <li v-for="(summary, index) in summary.jokowi.voteIncrease" :key="index">
@@ -58,18 +58,16 @@
                         </li> 
                     </ol>
                 </section>
-            </div>
-            <div class="summary-content">
-                <section class="summary-block">
+                <section class="summary-block c-red">
                     <h3>Top 5 decrease (%):</h3>
                     <ol>
                         <li v-for="(summary, index) in summary.jokowi.percentageDecrease" :key="index">
-                            <SummaryValue :name="summary.provinceNameEn" :value="summary.num + '%'"/>
+                            <SummaryValue :name="summary.provinceNameEn" :value="'-' + summary.num + '%'"/>
                             
                         </li>
                     </ol>
                 </section>
-                <section class="summary-block">
+                <section class="summary-block c-red">
                     <h3>Top 5 decrease (votes):</h3>
                     <ol>
                         <li v-for="(summary, index) in summary.jokowi.voteDecrease" :key="index">
@@ -82,7 +80,7 @@
         <section class="summary-container" v-if="type==2">
             <h2>Prabowo 2014-2019 Summary</h2>
             <div class="summary-content">
-                <section class="summary-block">
+                <section class="summary-block c-green">
                     <h3>Top 5 increase (%):</h3>
                     <ol>
                         <li v-for="(summary, index) in summary.prabowo.percentageIncrease" :key="index">
@@ -91,7 +89,7 @@
                         </li>
                     </ol>
                 </section>
-                <section class="summary-block">
+                <section class="summary-block c-green">
                     <h3>Top 5 increase (votes):</h3>
                     <ol>
                         <li v-for="(summary, index) in summary.prabowo.voteIncrease" :key="index">
@@ -99,9 +97,7 @@
                         </li> 
                     </ol>
                 </section>
-            </div>
-            <div class="summary-content">
-                <section class="summary-block">
+                <section class="summary-block c-red">
                     <h3>Top 5 decrease (%):</h3>
                     <ol>
                         <li v-for="(summary, index) in summary.prabowo.percentageDecrease" :key="index">
@@ -110,7 +106,7 @@
                         </li>
                     </ol>
                 </section>
-                <section class="summary-block">
+                <section class="summary-block c-red">
                     <h3>Top 5 decrease (votes):</h3>
                     <ol>
                         <li v-for="(summary, index) in summary.prabowo.voteDecrease" :key="index">
@@ -123,41 +119,24 @@
         <section class="summary-container" v-if="type==3">
             <h2>2014-2019 Overall Summary</h2>
             <div class="summary-content">
-                <section class="summary-block">
-                    <h3>Top 5 increase (%):</h3>
-                    <ol>
-                        <li v-for="(summary, index) in summary.prabowo.percentageIncrease" :key="index">
-                            <SummaryValue :name="summary.provinceNameEn" :value="summary.num + '%'"/>
-                            
-                        </li>
-                    </ol>
-                </section>
-                <section class="summary-block">
+                <section class="summary-block c-green">
                     <h3>Top 5 increase (votes):</h3>
                     <ol>
-                        <li v-for="(summary, index) in summary.prabowo.voteIncrease" :key="index">
+                        <li v-for="(summary, index) in summary.overall.voteIncrease" :key="index">
                             <SummaryValue :name="summary.provinceNameEn" :value="addThousandComma(summary.num)"/>
-                        </li> 
-                    </ol>
-                </section>
-            </div>
-            <div class="summary-content">
-                <section class="summary-block">
-                    <h3>Top 5 decrease (%):</h3>
-                    <ol>
-                        <li v-for="(summary, index) in summary.prabowo.percentageDecrease" :key="index">
-                            <SummaryValue :name="summary.provinceNameEn" :value="summary.num + '%'"/>
                             
                         </li>
                     </ol>
                 </section>
                 <section class="summary-block">
-                    <h3>Top 5 decrease (votes):</h3>
+                    <h3>Close races (%):</h3>
                     <ol>
-                        <li v-for="(summary, index) in summary.prabowo.voteDecrease" :key="index">
-                            <SummaryValue :name="summary.provinceNameEn" :value="addThousandComma(summary.num)"/>
-                        </li> 
+                        <li v-for="(summary, index) in summary.overall.closeRaces" :key="index">
+                            <SummaryValue :name="summary.provinceNameEn" :value="summary.num + '%'"/>
+                            
+                        </li>
                     </ol>
+                    <p class="summary--note">Margin of victory is between 0% to 5%</p>
                 </section>
             </div>
         </section>
@@ -222,12 +201,20 @@ ol {
     margin-right: 40px;
 }
 
-.jokowi-info {
+.c-blue {
+    color: #00007e;
+}
+
+.c-red {
     color: #850000;
 }
 
-.prabowo-info {
-    color: #00007e;
+.c-green {
+    color: #008000;
+}
+
+.summary--note {
+    font-size: 12px;
 }
 
 </style>
