@@ -207,6 +207,7 @@ body {
 
 h1 {
   text-align: center;
+  font-family: 'Lustria', sans-serif;
 }
 
 #map {
