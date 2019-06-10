@@ -78,13 +78,7 @@
                     On the other hand, West Java governor, Ridwan Kamil, is the supporter of Jokowi.
                 </li>
                 <li>
-                    In East Java, there's an increase of 2,726,514 in votes, and we see a rise in votes for Jokowi by +4,562,355 while Prabowo lost -1,835,841 votes.
-                </li>
-                <li>
-                    In Central Java, there's an increase of 2,324,698 in votes, and we see a rise in votes for Jokowi by +3,865,971 while Prabowo lost -1,541,273 votes. 
-                </li>
-                <li>
-                    Thus, we can see Jokowi gained a lot more supporters in East Java and Central Java. This can be seen as the key to his victory.
+                    Jokowi gained a lot of supporters in East Java and Central Java. This can be seen as the key to his victory.
                 </li>
             </ol>
         </section>
