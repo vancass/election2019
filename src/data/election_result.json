@@ -1,272 +1,42 @@
 [
   {
-    "provinceNameId": "Aceh",
-    "provinceNameEn": "Aceh",
-    "provinceIso": "ID.AC",
+    "provinceNameId": "Jawa Timur",
+    "provinceNameEn": "East Java",
+    "provinceIso": "ID.JI",
     "result2014": {
       "prabowo": {
-        "votes": 1089290,
-        "percentage": 54.93
+        "votes": 10277088,
+        "percentage": 46.83
       },
       "jokowi": {
-        "votes": 913309,
-        "percentage": 45.61
+        "votes": 11669313,
+        "percentage": 53.17
+      },
+      "difference": {
+        "percentage": 6.34
       }
     },
     "result2019": {
       "prabowo": {
-        "votes": 2400746,
-        "percentage": 85.59
+        "votes": 8441247,
+        "percentage": 34.21
       },
       "jokowi": {
-        "votes": 404188,
-        "percentage": 14.41
+        "votes": 16231668,
+        "percentage": 65.79
+      },
+      "difference": {
+        "percentage": 31.58
       }
     },
     "voteDifference": {
-      "jokowi": -509121,
-      "prabowo": 1311456,
-      "overall": 802335
-    }
-  },
-  {
-    "provinceNameId": "Bali",
-    "provinceNameEn": "Bali",
-    "provinceIso": "ID.BA",
-    "result2014": {
-      "prabowo": {
-        "votes": 614241,
-        "percentage": 28.58
-      },
-      "jokowi": {
-        "votes": 1535110,
-        "percentage": 71.42
-      }
+      "jokowi": 4562355,
+      "prabowo": -1835841,
+      "overall": 2726514
     },
-    "result2019": {
-      "prabowo": {
-        "votes": 213415,
-        "percentage": 8.32
-      },
-      "jokowi": {
-        "votes": 2351057,
-        "percentage": 91.68
-      }
-    },
-    "voteDifference": {
-      "jokowi": 815947,
-      "prabowo": -400826,
-      "overall": 415121
-    }
-  },
-  {
-    "provinceNameId": "Bangka-Belitung",
-    "provinceNameEn": "Bangka Belitung Islands",
-    "provinceIso": "ID.BB",
-    "result2014": {
-      "prabowo": {
-        "votes": 200706,
-        "percentage": 32.74
-      },
-      "jokowi": {
-        "votes": 412359,
-        "percentage": 67.26
-      }
-    },
-    "result2019": {
-      "prabowo": {
-        "votes": 288235,
-        "percentage": 36.77
-      },
-      "jokowi": {
-        "votes": 495729,
-        "percentage": 63.23
-      }
-    },
-    "voteDifference": {
-      "jokowi": 83370,
-      "prabowo": 87529,
-      "overall": 170899
-    }
-  },
-  {
-    "provinceNameId": "Banten",
-    "provinceNameEn": "Banten",
-    "provinceIso": "ID.BT",
-    "result2014": {
-      "prabowo": {
-        "votes": 3192671,
-        "percentage": 57.1
-      },
-      "jokowi": {
-        "votes": 2398631,
-        "percentage": 42.9
-      }
-    },
-    "result2019": {
-      "prabowo": {
-        "votes": 4059514,
-        "percentage": 61.54
-      },
-      "jokowi": {
-        "votes": 2537524,
-        "percentage": 38.46
-      }
-    },
-    "voteDifference": {
-      "jokowi": 138893,
-      "prabowo": 866843,
-      "overall": 1005736
-    }
-  },
-  {
-    "provinceNameId": "Bengkulu",
-    "provinceNameEn": "Bengkulu",
-    "provinceIso": "ID.BE",
-    "result2014": {
-      "prabowo": {
-        "votes": 433173,
-        "percentage": 45.27
-      },
-      "jokowi": {
-        "votes": 523669,
-        "percentage": 54.73
-      }
-    },
-    "result2019": {
-      "prabowo": {
-        "votes": 585999,
-        "percentage": 50.11
-      },
-      "jokowi": {
-        "votes": 583488,
-        "percentage": 49.89
-      }
-    },
-    "voteDifference": {
-      "jokowi": 59819,
-      "prabowo": 152826,
-      "overall": 212645
-    }
-  },
-  {
-    "provinceNameId": "DKI Jakarta",
-    "provinceNameEn": "Jakarta",
-    "provinceIso": "ID.JK",
-    "result2014": {
-      "prabowo": {
-        "votes": 2528064,
-        "percentage": 46.92
-      },
-      "jokowi": {
-        "votes": 2859894,
-        "percentage": 53.08
-      }
-    },
-    "result2019": {
-      "prabowo": {
-        "votes": 3066137,
-        "percentage": 48.32
-      },
-      "jokowi": {
-        "votes": 3279547,
-        "percentage": 51.68
-      }
-    },
-    "voteDifference": {
-      "jokowi": 419653,
-      "prabowo": 538073,
-      "overall": 957726
-    }
-  },
-  {
-    "provinceNameId": "Gorontalo",
-    "provinceNameEn": "Gorontalo",
-    "provinceIso": "ID.GO",
-    "result2014": {
-      "prabowo": {
-        "votes": 378735,
-        "percentage": 63.1
-      },
-      "jokowi": {
-        "votes": 221497,
-        "percentage": 36.9
-      }
-    },
-    "result2019": {
-      "prabowo": {
-        "votes": 345129,
-        "percentage": 48.27
-      },
-      "jokowi": {
-        "votes": 369803,
-        "percentage": 51.73
-      }
-    },
-    "voteDifference": {
-      "jokowi": 148306,
-      "prabowo": -33606,
-      "overall": 114700
-    }
-  },
-  {
-    "provinceNameId": "Jambi",
-    "provinceNameEn": "Jambi",
-    "provinceIso": "ID.JA",
-    "result2014": {
-      "prabowo": {
-        "votes": 871316,
-        "percentage": 49.25
-      },
-      "jokowi": {
-        "votes": 897787,
-        "percentage": 50.75
-      }
-    },
-    "result2019": {
-      "prabowo": {
-        "votes": 1203025,
-        "percentage": 58.32
-      },
-      "jokowi": {
-        "votes": 859833,
-        "percentage": 41.68
-      }
-    },
-    "voteDifference": {
-      "jokowi": -37954,
-      "prabowo": 331709,
-      "overall": 293755
-    }
-  },
-  {
-    "provinceNameId": "Jawa Barat",
-    "provinceNameEn": "West Java",
-    "provinceIso": "ID.JR",
-    "result2014": {
-      "prabowo": {
-        "votes": 14167381,
-        "percentage": 59.78
-      },
-      "jokowi": {
-        "votes": 9530315,
-        "percentage": 40.22
-      }
-    },
-    "result2019": {
-      "prabowo": {
-        "votes": 16077446,
-        "percentage": 59.93
-      },
-      "jokowi": {
-        "votes": 10750568,
-        "percentage": 40.07
-      }
-    },
-    "voteDifference": {
-      "jokowi": 1220253,
-      "prabowo": 1910065,
-      "overall": 3130318
+    "percentageDifference": {
+      "jokowi": 12.62,
+      "prabowo": -12.62
     }
   },
   {
@@ -281,6 +51,9 @@
       "jokowi": {
         "votes": 12959540,
         "percentage": 66.65
+      },
+      "difference": {
+        "percentage": 33.3
       }
     },
     "result2019": {
@@ -291,312 +64,19 @@
       "jokowi": {
         "votes": 16825511,
         "percentage": 77.29
+      },
+      "difference": {
+        "percentage": 54.58
       }
     },
     "voteDifference": {
       "jokowi": 3865971,
       "prabowo": -1541273,
       "overall": 2324698
-    }
-  },
-  {
-    "provinceNameId": "Jawa Timur",
-    "provinceNameEn": "East Java",
-    "provinceIso": "ID.JI",
-    "result2014": {
-      "prabowo": {
-        "votes": 10277088,
-        "percentage": 46.83
-      },
-      "jokowi": {
-        "votes": 11669313,
-        "percentage": 53.17
-      }
     },
-    "result2019": {
-      "prabowo": {
-        "votes": 8441247,
-        "percentage": 34.21
-      },
-      "jokowi": {
-        "votes": 16231668,
-        "percentage": 65.79
-      }
-    },
-    "voteDifference": {
-      "jokowi": 4562355,
-      "prabowo": -1835841,
-      "overall": 2726514
-    }
-  },
-  {
-    "provinceNameId": "Kalimantan Barat",
-    "provinceNameEn": "West Kalimantan",
-    "provinceIso": "ID.KB",
-    "result2014": {
-      "prabowo": {
-        "votes": 1032354,
-        "percentage": 39.62
-      },
-      "jokowi": {
-        "votes": 1573046,
-        "percentage": 60.38
-      }
-    },
-    "result2019": {
-      "prabowo": {
-        "votes": 1263757,
-        "percentage": 42.5
-      },
-      "jokowi": {
-        "votes": 1709896,
-        "percentage": 57.5
-      }
-    },
-    "voteDifference": {
-      "jokowi": 136850,
-      "prabowo": 231403,
-      "overall": 368253
-    }
-  },
-  {
-    "provinceNameId": "Kalimantan Selatan",
-    "provinceNameEn": "South Kalimantan",
-    "provinceIso": "ID.KS",
-    "result2014": {
-      "prabowo": {
-        "votes": 941809,
-        "percentage": 50.05
-      },
-      "jokowi": {
-        "votes": 939748,
-        "percentage": 49.95
-      }
-    },
-    "result2019": {
-      "prabowo": {
-        "votes": 1470163,
-        "percentage": 64.08
-      },
-      "jokowi": {
-        "votes": 823939,
-        "percentage": 35.92
-      }
-    },
-    "voteDifference": {
-      "jokowi": -115809,
-      "prabowo": 528354,
-      "overall": 412545
-    }
-  },
-  {
-    "provinceNameId": "Kalimantan Tengah",
-    "provinceNameEn": "Central Kalimantan",
-    "provinceIso": "ID.KT",
-    "result2014": {
-      "prabowo": {
-        "votes": 468277,
-        "percentage": 40.21
-      },
-      "jokowi": {
-        "votes": 696199,
-        "percentage": 59.79
-      }
-    },
-    "result2019": {
-      "prabowo": {
-        "votes": 537138,
-        "percentage": 39.26
-      },
-      "jokowi": {
-        "votes": 830948,
-        "percentage": 60.74
-      }
-    },
-    "voteDifference": {
-      "jokowi": 134749,
-      "prabowo": 68861,
-      "overall": 203610
-    }
-  },
-  {
-    "provinceNameId": "Kalimantan Timur",
-    "provinceNameEn": "East Kalimantan",
-    "provinceIso": "ID.KI",
-    "result2014": {
-      "prabowo": {
-        "votes": 687734,
-        "percentage": 36.62
-      },
-      "jokowi": {
-        "votes": 1190156,
-        "percentage": 63.38
-      }
-    },
-    "result2019": {
-      "prabowo": {
-        "votes": 976605,
-        "percentage": 42.1
-      },
-      "jokowi": {
-        "votes": 1343084,
-        "percentage": 57.9
-      }
-    },
-    "voteDifference": {
-      "jokowi": 152928,
-      "prabowo": 288871,
-      "overall": 441799
-    }
-  },
-  {
-    "provinceNameId": "Kepulauan Riau",
-    "provinceNameEn": "Riau Islands",
-    "provinceIso": "ID.KR",
-    "result2014": {
-      "prabowo": {
-        "votes": 332908,
-        "percentage": 40.37
-      },
-      "jokowi": {
-        "votes": 491819,
-        "percentage": 59.63
-      }
-    },
-    "result2019": {
-      "prabowo": {
-        "votes": 465511,
-        "percentage": 45.81
-      },
-      "jokowi": {
-        "votes": 550692,
-        "percentage": 54.19
-      }
-    },
-    "voteDifference": {
-      "jokowi": 58873,
-      "prabowo": 132603,
-      "overall": 191476
-    }
-  },
-  {
-    "provinceNameId": "Lampung",
-    "provinceNameEn": "Lampung",
-    "provinceIso": "ID.LA",
-    "result2014": {
-      "prabowo": {
-        "votes": 2033924,
-        "percentage": 46.93
-      },
-      "jokowi": {
-        "votes": 2299889,
-        "percentage": 53.07
-      }
-    },
-    "result2019": {
-      "prabowo": {
-        "votes": 1955689,
-        "percentage": 40.66
-      },
-      "jokowi": {
-        "votes": 2853585,
-        "percentage": 59.34
-      }
-    },
-    "voteDifference": {
-      "jokowi": 553696,
-      "prabowo": -78235,
-      "overall": 475461
-    }
-  },
-  {
-    "provinceNameId": "Maluku",
-    "provinceNameEn": "Maluku",
-    "provinceIso": "ID.MA",
-    "result2014": {
-      "prabowo": {
-        "votes": 433981,
-        "percentage": 49.48
-      },
-      "jokowi": {
-        "votes": 443040,
-        "percentage": 50.52
-      }
-    },
-    "result2019": {
-      "prabowo": {
-        "votes": 392940,
-        "percentage": 39.6
-      },
-      "jokowi": {
-        "votes": 599457,
-        "percentage": 60.4
-      }
-    },
-    "voteDifference": {
-      "jokowi": 156417,
-      "prabowo": -41041,
-      "overall": 115376
-    }
-  },
-  {
-    "provinceNameId": "Maluku Utara",
-    "provinceNameEn": "North Maluku",
-    "provinceIso": "ID.MU",
-    "result2014": {
-      "prabowo": {
-        "votes": 306792,
-        "percentage": 54.45
-      },
-      "jokowi": {
-        "votes": 256601,
-        "percentage": 45.55
-      }
-    },
-    "result2019": {
-      "prabowo": {
-        "votes": 344823,
-        "percentage": 52.61
-      },
-      "jokowi": {
-        "votes": 310548,
-        "percentage": 47.39
-      }
-    },
-    "voteDifference": {
-      "jokowi": 53947,
-      "prabowo": 38031,
-      "overall": 91978
-    }
-  },
-  {
-    "provinceNameId": "Nusa Tenggara Barat",
-    "provinceNameEn": "West Nusa Tenggara",
-    "provinceIso": "ID.NB",
-    "result2014": {
-      "prabowo": {
-        "votes": 1844178,
-        "percentage": 72.45
-      },
-      "jokowi": {
-        "votes": 701238,
-        "percentage": 27.55
-      }
-    },
-    "result2019": {
-      "prabowo": {
-        "votes": 2011319,
-        "percentage": 67.89
-      },
-      "jokowi": {
-        "votes": 951242,
-        "percentage": 32.11
-      }
-    },
-    "voteDifference": {
-      "jokowi": 250004,
-      "prabowo": 167141,
-      "overall": 417145
+    "percentageDifference": {
+      "jokowi": 10.64,
+      "prabowo": -10.64
     }
   },
   {
@@ -611,22 +91,32 @@
       "jokowi": {
         "votes": 1488076,
         "percentage": 65.92
+      },
+      "difference": {
+        "percentage": 31.84
       }
     },
     "result2019": {
       "prabowo": {
         "votes": 305587,
-        "percentage": 14.43
+        "percentage": 11.43
       },
       "jokowi": {
         "votes": 2368982,
         "percentage": 88.57
+      },
+      "difference": {
+        "percentage": 77.14
       }
     },
     "voteDifference": {
       "jokowi": 880906,
       "prabowo": -463804,
       "overall": 417102
+    },
+    "percentageDifference": {
+      "jokowi": 22.65,
+      "prabowo": -22.65
     }
   },
   {
@@ -641,6 +131,9 @@
       "jokowi": {
         "votes": 2026735,
         "percentage": 72.49
+      },
+      "difference": {
+        "percentage": 44.98
       }
     },
     "result2019": {
@@ -651,192 +144,59 @@
       "jokowi": {
         "votes": 3021713,
         "percentage": 90.66
+      },
+      "difference": {
+        "percentage": 81.32
       }
     },
     "voteDifference": {
       "jokowi": 994978,
       "prabowo": -457780,
       "overall": 537198
+    },
+    "percentageDifference": {
+      "jokowi": 18.17,
+      "prabowo": -18.17
     }
   },
   {
-    "provinceNameId": "Papua Barat",
-    "provinceNameEn": "West Papua",
-    "provinceIso": "ID.IB",
+    "provinceNameId": "Bali",
+    "provinceNameEn": "Bali",
+    "provinceIso": "ID.BA",
     "result2014": {
       "prabowo": {
-        "votes": 172528,
-        "percentage": 32.37
+        "votes": 614241,
+        "percentage": 28.58
       },
       "jokowi": {
-        "votes": 360379,
-        "percentage": 67.63
+        "votes": 1535110,
+        "percentage": 71.42
+      },
+      "difference": {
+        "percentage": 42.84
       }
     },
     "result2019": {
       "prabowo": {
-        "votes": 128732,
-        "percentage": 20.19
+        "votes": 213415,
+        "percentage": 8.32
       },
       "jokowi": {
-        "votes": 508997,
-        "percentage": 79.81
+        "votes": 2351057,
+        "percentage": 91.68
+      },
+      "difference": {
+        "percentage": 83.36
       }
     },
     "voteDifference": {
-      "jokowi": 148618,
-      "prabowo": -43796,
-      "overall": 104822
-    }
-  },
-  {
-    "provinceNameId": "Riau",
-    "provinceNameEn": "Riau",
-    "provinceIso": "ID.RI",
-    "result2014": {
-      "prabowo": {
-        "votes": 1349338,
-        "percentage": 50.12
-      },
-      "jokowi": {
-        "votes": 1342817,
-        "percentage": 49.88
-      }
+      "jokowi": 815947,
+      "prabowo": -400826,
+      "overall": 415121
     },
-    "result2019": {
-      "prabowo": {
-        "votes": 1975287,
-        "percentage": 61.27
-      },
-      "jokowi": {
-        "votes": 1248713,
-        "percentage": 38.73
-      }
-    },
-    "voteDifference": {
-      "jokowi": -94104,
-      "prabowo": 625949,
-      "overall": 531845
-    }
-  },
-  {
-    "provinceNameId": "Sulawesi Barat",
-    "provinceNameEn": "West Sulawesi",
-    "provinceIso": "ID.SR",
-    "result2014": {
-      "prabowo": {
-        "votes": 165494,
-        "percentage": 26.63
-      },
-      "jokowi": {
-        "votes": 456021,
-        "percentage": 73.37
-      }
-    },
-    "result2019": {
-      "prabowo": {
-        "votes": 263620,
-        "percentage": 35.68
-      },
-      "jokowi": {
-        "votes": 475312,
-        "percentage": 64.32
-      }
-    },
-    "voteDifference": {
-      "jokowi": 19291,
-      "prabowo": 98126,
-      "overall": 117417
-    }
-  },
-  {
-    "provinceNameId": "Sulawesi Selatan",
-    "provinceNameEn": "South Sulawesi",
-    "provinceIso": "ID.SE",
-    "result2014": {
-      "prabowo": {
-        "votes": 1214857,
-        "percentage": 28.57
-      },
-      "jokowi": {
-        "votes": 3037026,
-        "percentage": 71.43
-      }
-    },
-    "result2019": {
-      "prabowo": {
-        "votes": 2809393,
-        "percentage": 57.02
-      },
-      "jokowi": {
-        "votes": 2117591,
-        "percentage": 42.98
-      }
-    },
-    "voteDifference": {
-      "jokowi": -919435,
-      "prabowo": 1594536,
-      "overall": 675101
-    }
-  },
-  {
-    "provinceNameId": "Sulawesi Tengah",
-    "provinceNameEn": "Central Sulawesi",
-    "provinceIso": "ID.ST",
-    "result2014": {
-      "prabowo": {
-        "votes": 632009,
-        "percentage": 45.17
-      },
-      "jokowi": {
-        "votes": 767151,
-        "percentage": 54.83
-      }
-    },
-    "result2019": {
-      "prabowo": {
-        "votes": 706654,
-        "percentage": 43.59
-      },
-      "jokowi": {
-        "votes": 914588,
-        "percentage": 56.41
-      }
-    },
-    "voteDifference": {
-      "jokowi": 147437,
-      "prabowo": 74645,
-      "overall": 222082
-    }
-  },
-  {
-    "provinceNameId": "Sulawesi Tenggara",
-    "provinceNameEn": "Southeast Sulawesi",
-    "provinceIso": "ID.SG",
-    "result2014": {
-      "prabowo": {
-        "votes": 511134,
-        "percentage": 45.1
-      },
-      "jokowi": {
-        "votes": 622217,
-        "percentage": 54.9
-      }
-    },
-    "result2019": {
-      "prabowo": {
-        "votes": 842117,
-        "percentage": 60.25
-      },
-      "jokowi": {
-        "votes": 555664,
-        "percentage": 39.75
-      }
-    },
-    "voteDifference": {
-      "jokowi": -66553,
-      "prabowo": 330983,
-      "overall": 264430
+    "percentageDifference": {
+      "jokowi": 20.26,
+      "prabowo": -20.26
     }
   },
   {
@@ -851,6 +211,9 @@
       "jokowi": {
         "votes": 724553,
         "percentage": 53.88
+      },
+      "difference": {
+        "percentage": 7.76
       }
     },
     "result2019": {
@@ -861,102 +224,19 @@
       "jokowi": {
         "votes": 1220524,
         "percentage": 77.24
+      },
+      "difference": {
+        "percentage": 54.48
       }
     },
     "voteDifference": {
       "jokowi": 495971,
       "prabowo": -260410,
       "overall": 235561
-    }
-  },
-  {
-    "provinceNameId": "Sumatra Barat",
-    "provinceNameEn": "West Sumatra",
-    "provinceIso": "ID.SB",
-    "result2014": {
-      "prabowo": {
-        "votes": 1797505,
-        "percentage": 76.92
-      },
-      "jokowi": {
-        "votes": 539308,
-        "percentage": 23.08
-      }
     },
-    "result2019": {
-      "prabowo": {
-        "votes": 2488733,
-        "percentage": 85.91
-      },
-      "jokowi": {
-        "votes": 407761,
-        "percentage": 14.08
-      }
-    },
-    "voteDifference": {
-      "jokowi": -131547,
-      "prabowo": 691228,
-      "overall": 559681
-    }
-  },
-  {
-    "provinceNameId": "Sumatra Selatan",
-    "provinceNameEn": "South Sumatra",
-    "provinceIso": "ID.SL",
-    "result2014": {
-      "prabowo": {
-        "votes": 2132163,
-        "percentage": 51.26
-      },
-      "jokowi": {
-        "votes": 2027049,
-        "percentage": 48.74
-      }
-    },
-    "result2019": {
-      "prabowo": {
-        "votes": 2877781,
-        "percentage": 59.7
-      },
-      "jokowi": {
-        "votes": 1942987,
-        "percentage": 40.3
-      }
-    },
-    "voteDifference": {
-      "jokowi": -84062,
-      "prabowo": 745618,
-      "overall": 661556
-    }
-  },
-  {
-    "provinceNameId": "Sumatra Utara",
-    "provinceNameEn": "North Sumatra",
-    "provinceIso": "ID.SU",
-    "result2014": {
-      "prabowo": {
-        "votes": 2831514,
-        "percentage": 44.76
-      },
-      "jokowi": {
-        "votes": 3494835,
-        "percentage": 55.24
-      }
-    },
-    "result2019": {
-      "prabowo": {
-        "votes": 3587786,
-        "percentage": 47.68
-      },
-      "jokowi": {
-        "votes": 3936515,
-        "percentage": 52.32
-      }
-    },
-    "voteDifference": {
-      "jokowi": 441680,
-      "prabowo": 756272,
-      "overall": 1197952
+    "percentageDifference": {
+      "jokowi": 23.36,
+      "prabowo": -23.36
     }
   },
   {
@@ -971,6 +251,9 @@
       "jokowi": {
         "votes": 1234249,
         "percentage": 55.81
+      },
+      "difference": {
+        "percentage": 11.62
       }
     },
     "result2019": {
@@ -981,12 +264,1059 @@
       "jokowi": {
         "votes": 1655174,
         "percentage": 69.03
+      },
+      "difference": {
+        "percentage": 38.06
       }
     },
     "voteDifference": {
       "jokowi": 420925,
       "prabowo": -234861,
       "overall": 186064
+    },
+    "percentageDifference": {
+      "jokowi": 13.22,
+      "prabowo": -13.22
+    }
+  },
+  {
+    "provinceNameId": "Lampung",
+    "provinceNameEn": "Lampung",
+    "provinceIso": "ID.LA",
+    "result2014": {
+      "prabowo": {
+        "votes": 2033924,
+        "percentage": 46.93
+      },
+      "jokowi": {
+        "votes": 2299889,
+        "percentage": 53.07
+      },
+      "difference": {
+        "percentage": 6.14
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 1955689,
+        "percentage": 40.66
+      },
+      "jokowi": {
+        "votes": 2853585,
+        "percentage": 59.34
+      },
+      "difference": {
+        "percentage": 18.68
+      }
+    },
+    "voteDifference": {
+      "jokowi": 553696,
+      "prabowo": -78235,
+      "overall": 475461
+    },
+    "percentageDifference": {
+      "jokowi": 6.27,
+      "prabowo": -6.27
+    }
+  },
+  {
+    "provinceNameId": "Papua Barat",
+    "provinceNameEn": "West Papua",
+    "provinceIso": "ID.IB",
+    "result2014": {
+      "prabowo": {
+        "votes": 172528,
+        "percentage": 32.37
+      },
+      "jokowi": {
+        "votes": 360379,
+        "percentage": 67.63
+      },
+      "difference": {
+        "percentage": 35.26
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 128732,
+        "percentage": 20.19
+      },
+      "jokowi": {
+        "votes": 508997,
+        "percentage": 79.81
+      },
+      "difference": {
+        "percentage": 59.62
+      }
+    },
+    "voteDifference": {
+      "jokowi": 148618,
+      "prabowo": -43796,
+      "overall": 104822
+    },
+    "percentageDifference": {
+      "jokowi": 12.18,
+      "prabowo": -12.18
+    }
+  },
+  {
+    "provinceNameId": "Maluku",
+    "provinceNameEn": "Maluku",
+    "provinceIso": "ID.MA",
+    "result2014": {
+      "prabowo": {
+        "votes": 433981,
+        "percentage": 49.48
+      },
+      "jokowi": {
+        "votes": 443040,
+        "percentage": 50.52
+      },
+      "difference": {
+        "percentage": 1.04
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 392940,
+        "percentage": 39.6
+      },
+      "jokowi": {
+        "votes": 599457,
+        "percentage": 60.4
+      },
+      "difference": {
+        "percentage": 20.8
+      }
+    },
+    "voteDifference": {
+      "jokowi": 156417,
+      "prabowo": -41041,
+      "overall": 115376
+    },
+    "percentageDifference": {
+      "jokowi": 9.88,
+      "prabowo": -9.88
+    }
+  },
+  {
+    "provinceNameId": "Gorontalo",
+    "provinceNameEn": "Gorontalo",
+    "provinceIso": "ID.GO",
+    "result2014": {
+      "prabowo": {
+        "votes": 378735,
+        "percentage": 63.1
+      },
+      "jokowi": {
+        "votes": 221497,
+        "percentage": 36.9
+      },
+      "difference": {
+        "percentage": 26.2
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 345129,
+        "percentage": 48.27
+      },
+      "jokowi": {
+        "votes": 369803,
+        "percentage": 51.73
+      },
+      "difference": {
+        "percentage": 3.46
+      }
+    },
+    "voteDifference": {
+      "jokowi": 148306,
+      "prabowo": -33606,
+      "overall": 114700
+    },
+    "percentageDifference": {
+      "jokowi": 14.83,
+      "prabowo": -14.83
+    }
+  },
+  {
+    "provinceNameId": "Maluku Utara",
+    "provinceNameEn": "North Maluku",
+    "provinceIso": "ID.MU",
+    "result2014": {
+      "prabowo": {
+        "votes": 306792,
+        "percentage": 54.45
+      },
+      "jokowi": {
+        "votes": 256601,
+        "percentage": 45.55
+      },
+      "difference": {
+        "percentage": 8.9
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 344823,
+        "percentage": 52.61
+      },
+      "jokowi": {
+        "votes": 310548,
+        "percentage": 47.39
+      },
+      "difference": {
+        "percentage": 5.22
+      }
+    },
+    "voteDifference": {
+      "jokowi": 53947,
+      "prabowo": 38031,
+      "overall": 91978
+    },
+    "percentageDifference": {
+      "jokowi": 1.84,
+      "prabowo": -1.84
+    }
+  },
+  {
+    "provinceNameId": "Kalimantan Tengah",
+    "provinceNameEn": "Central Kalimantan",
+    "provinceIso": "ID.KT",
+    "result2014": {
+      "prabowo": {
+        "votes": 468277,
+        "percentage": 40.21
+      },
+      "jokowi": {
+        "votes": 696199,
+        "percentage": 59.79
+      },
+      "difference": {
+        "percentage": 19.58
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 537138,
+        "percentage": 39.26
+      },
+      "jokowi": {
+        "votes": 830948,
+        "percentage": 60.74
+      },
+      "difference": {
+        "percentage": 21.48
+      }
+    },
+    "voteDifference": {
+      "jokowi": 134749,
+      "prabowo": 68861,
+      "overall": 203610
+    },
+    "percentageDifference": {
+      "jokowi": 0.95,
+      "prabowo": -0.95
+    }
+  },
+  {
+    "provinceNameId": "Sulawesi Tengah",
+    "provinceNameEn": "Central Sulawesi",
+    "provinceIso": "ID.ST",
+    "result2014": {
+      "prabowo": {
+        "votes": 632009,
+        "percentage": 45.17
+      },
+      "jokowi": {
+        "votes": 767151,
+        "percentage": 54.83
+      },
+      "difference": {
+        "percentage": 9.66
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 706654,
+        "percentage": 43.59
+      },
+      "jokowi": {
+        "votes": 914588,
+        "percentage": 56.41
+      },
+      "difference": {
+        "percentage": 12.82
+      }
+    },
+    "voteDifference": {
+      "jokowi": 147437,
+      "prabowo": 74645,
+      "overall": 222082
+    },
+    "percentageDifference": {
+      "jokowi": 1.58,
+      "prabowo": -1.58
+    }
+  },
+  {
+    "provinceNameId": "Bangka-Belitung",
+    "provinceNameEn": "Bangka Belitung Islands",
+    "provinceIso": "ID.BB",
+    "result2014": {
+      "prabowo": {
+        "votes": 200706,
+        "percentage": 32.74
+      },
+      "jokowi": {
+        "votes": 412359,
+        "percentage": 67.26
+      },
+      "difference": {
+        "percentage": 34.52
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 288235,
+        "percentage": 36.77
+      },
+      "jokowi": {
+        "votes": 495729,
+        "percentage": 63.23
+      },
+      "difference": {
+        "percentage": 26.46
+      }
+    },
+    "voteDifference": {
+      "jokowi": 83370,
+      "prabowo": 87529,
+      "overall": 170899
+    },
+    "percentageDifference": {
+      "jokowi": -4.03,
+      "prabowo": 4.03
+    }
+  },
+  {
+    "provinceNameId": "Sulawesi Barat",
+    "provinceNameEn": "West Sulawesi",
+    "provinceIso": "ID.SR",
+    "result2014": {
+      "prabowo": {
+        "votes": 165494,
+        "percentage": 26.63
+      },
+      "jokowi": {
+        "votes": 456021,
+        "percentage": 73.37
+      },
+      "difference": {
+        "percentage": 46.74
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 263620,
+        "percentage": 35.68
+      },
+      "jokowi": {
+        "votes": 475312,
+        "percentage": 64.32
+      },
+      "difference": {
+        "percentage": 28.64
+      }
+    },
+    "voteDifference": {
+      "jokowi": 19291,
+      "prabowo": 98126,
+      "overall": 117417
+    },
+    "percentageDifference": {
+      "jokowi": -9.05,
+      "prabowo": 9.05
+    }
+  },
+  {
+    "provinceNameId": "Kepulauan Riau",
+    "provinceNameEn": "Riau Islands",
+    "provinceIso": "ID.KR",
+    "result2014": {
+      "prabowo": {
+        "votes": 332908,
+        "percentage": 40.37
+      },
+      "jokowi": {
+        "votes": 491819,
+        "percentage": 59.63
+      },
+      "difference": {
+        "percentage": 19.26
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 465511,
+        "percentage": 45.81
+      },
+      "jokowi": {
+        "votes": 550692,
+        "percentage": 54.19
+      },
+      "difference": {
+        "percentage": 8.38
+      }
+    },
+    "voteDifference": {
+      "jokowi": 58873,
+      "prabowo": 132603,
+      "overall": 191476
+    },
+    "percentageDifference": {
+      "jokowi": -5.44,
+      "prabowo": 5.44
+    }
+  },
+  {
+    "provinceNameId": "Bengkulu",
+    "provinceNameEn": "Bengkulu",
+    "provinceIso": "ID.BE",
+    "result2014": {
+      "prabowo": {
+        "votes": 433173,
+        "percentage": 45.27
+      },
+      "jokowi": {
+        "votes": 523669,
+        "percentage": 54.73
+      },
+      "difference": {
+        "percentage": 9.46
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 585999,
+        "percentage": 50.11
+      },
+      "jokowi": {
+        "votes": 583488,
+        "percentage": 49.89
+      },
+      "difference": {
+        "percentage": 0.22
+      }
+    },
+    "voteDifference": {
+      "jokowi": 59819,
+      "prabowo": 152826,
+      "overall": 212645
+    },
+    "percentageDifference": {
+      "jokowi": -4.84,
+      "prabowo": 4.84
+    }
+  },
+  {
+    "provinceNameId": "Nusa Tenggara Barat",
+    "provinceNameEn": "West Nusa Tenggara",
+    "provinceIso": "ID.NB",
+    "result2014": {
+      "prabowo": {
+        "votes": 1844178,
+        "percentage": 72.45
+      },
+      "jokowi": {
+        "votes": 701238,
+        "percentage": 27.55
+      },
+      "difference": {
+        "percentage": 44.9
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 2011319,
+        "percentage": 67.89
+      },
+      "jokowi": {
+        "votes": 951242,
+        "percentage": 32.11
+      },
+      "difference": {
+        "percentage": 35.78
+      }
+    },
+    "voteDifference": {
+      "jokowi": 250004,
+      "prabowo": 167141,
+      "overall": 417145
+    },
+    "percentageDifference": {
+      "jokowi": 4.56,
+      "prabowo": -4.56
+    }
+  },
+  {
+    "provinceNameId": "Kalimantan Barat",
+    "provinceNameEn": "West Kalimantan",
+    "provinceIso": "ID.KB",
+    "result2014": {
+      "prabowo": {
+        "votes": 1032354,
+        "percentage": 39.62
+      },
+      "jokowi": {
+        "votes": 1573046,
+        "percentage": 60.38
+      },
+      "difference": {
+        "percentage": 20.76
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 1263757,
+        "percentage": 42.5
+      },
+      "jokowi": {
+        "votes": 1709896,
+        "percentage": 57.5
+      },
+      "difference": {
+        "percentage": 15
+      }
+    },
+    "voteDifference": {
+      "jokowi": 136850,
+      "prabowo": 231403,
+      "overall": 368253
+    },
+    "percentageDifference": {
+      "jokowi": -2.88,
+      "prabowo": 2.88
+    }
+  },
+  {
+    "provinceNameId": "Kalimantan Timur",
+    "provinceNameEn": "East Kalimantan",
+    "provinceIso": "ID.KI",
+    "result2014": {
+      "prabowo": {
+        "votes": 687734,
+        "percentage": 36.62
+      },
+      "jokowi": {
+        "votes": 1190156,
+        "percentage": 63.38
+      },
+      "difference": {
+        "percentage": 26.76
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 976605,
+        "percentage": 42.1
+      },
+      "jokowi": {
+        "votes": 1343084,
+        "percentage": 57.9
+      },
+      "difference": {
+        "percentage": 15.8
+      }
+    },
+    "voteDifference": {
+      "jokowi": 152928,
+      "prabowo": 288871,
+      "overall": 441799
+    },
+    "percentageDifference": {
+      "jokowi": -5.48,
+      "prabowo": 5.48
+    }
+  },
+  {
+    "provinceNameId": "Sulawesi Tenggara",
+    "provinceNameEn": "Southeast Sulawesi",
+    "provinceIso": "ID.SG",
+    "result2014": {
+      "prabowo": {
+        "votes": 511134,
+        "percentage": 45.1
+      },
+      "jokowi": {
+        "votes": 622217,
+        "percentage": 54.9
+      },
+      "difference": {
+        "percentage": 9.8
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 842117,
+        "percentage": 60.25
+      },
+      "jokowi": {
+        "votes": 555664,
+        "percentage": 39.75
+      },
+      "difference": {
+        "percentage": 20.5
+      }
+    },
+    "voteDifference": {
+      "jokowi": -66553,
+      "prabowo": 330983,
+      "overall": 264430
+    },
+    "percentageDifference": {
+      "jokowi": -15.15,
+      "prabowo": 15.15
+    }
+  },
+  {
+    "provinceNameId": "Jambi",
+    "provinceNameEn": "Jambi",
+    "provinceIso": "ID.JA",
+    "result2014": {
+      "prabowo": {
+        "votes": 871316,
+        "percentage": 49.25
+      },
+      "jokowi": {
+        "votes": 897787,
+        "percentage": 50.75
+      },
+      "difference": {
+        "percentage": 1.5
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 1203025,
+        "percentage": 58.32
+      },
+      "jokowi": {
+        "votes": 859833,
+        "percentage": 41.68
+      },
+      "difference": {
+        "percentage": 16.64
+      }
+    },
+    "voteDifference": {
+      "jokowi": -37954,
+      "prabowo": 331709,
+      "overall": 293755
+    },
+    "percentageDifference": {
+      "jokowi": -9.07,
+      "prabowo": 9.07
+    }
+  },
+  {
+    "provinceNameId": "Kalimantan Selatan",
+    "provinceNameEn": "South Kalimantan",
+    "provinceIso": "ID.KS",
+    "result2014": {
+      "prabowo": {
+        "votes": 941809,
+        "percentage": 50.05
+      },
+      "jokowi": {
+        "votes": 939748,
+        "percentage": 49.95
+      },
+      "difference": {
+        "percentage": 0.1
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 1470163,
+        "percentage": 64.08
+      },
+      "jokowi": {
+        "votes": 823939,
+        "percentage": 35.92
+      },
+      "difference": {
+        "percentage": 28.16
+      }
+    },
+    "voteDifference": {
+      "jokowi": -115809,
+      "prabowo": 528354,
+      "overall": 412545
+    },
+    "percentageDifference": {
+      "jokowi": -14.03,
+      "prabowo": 14.03
+    }
+  },
+  {
+    "provinceNameId": "DKI Jakarta",
+    "provinceNameEn": "Jakarta",
+    "provinceIso": "ID.JK",
+    "result2014": {
+      "prabowo": {
+        "votes": 2528064,
+        "percentage": 46.92
+      },
+      "jokowi": {
+        "votes": 2859894,
+        "percentage": 53.08
+      },
+      "difference": {
+        "percentage": 6.16
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 3066137,
+        "percentage": 48.32
+      },
+      "jokowi": {
+        "votes": 3279547,
+        "percentage": 51.68
+      },
+      "difference": {
+        "percentage": 3.36
+      }
+    },
+    "voteDifference": {
+      "jokowi": 419653,
+      "prabowo": 538073,
+      "overall": 957726
+    },
+    "percentageDifference": {
+      "jokowi": -1.4,
+      "prabowo": 1.4
+    }
+  },
+  {
+    "provinceNameId": "Riau",
+    "provinceNameEn": "Riau",
+    "provinceIso": "ID.RI",
+    "result2014": {
+      "prabowo": {
+        "votes": 1349338,
+        "percentage": 50.12
+      },
+      "jokowi": {
+        "votes": 1342817,
+        "percentage": 49.88
+      },
+      "difference": {
+        "percentage": 0.24
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 1975287,
+        "percentage": 61.27
+      },
+      "jokowi": {
+        "votes": 1248713,
+        "percentage": 38.73
+      },
+      "difference": {
+        "percentage": 22.54
+      }
+    },
+    "voteDifference": {
+      "jokowi": -94104,
+      "prabowo": 625949,
+      "overall": 531845
+    },
+    "percentageDifference": {
+      "jokowi": -11.15,
+      "prabowo": 11.15
+    }
+  },
+  {
+    "provinceNameId": "Sumatra Barat",
+    "provinceNameEn": "West Sumatra",
+    "provinceIso": "ID.SB",
+    "result2014": {
+      "prabowo": {
+        "votes": 1797505,
+        "percentage": 76.92
+      },
+      "jokowi": {
+        "votes": 539308,
+        "percentage": 23.08
+      },
+      "difference": {
+        "percentage": 53.84
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 2488733,
+        "percentage": 85.91
+      },
+      "jokowi": {
+        "votes": 407761,
+        "percentage": 14.08
+      },
+      "difference": {
+        "percentage": 71.83
+      }
+    },
+    "voteDifference": {
+      "jokowi": -131547,
+      "prabowo": 691228,
+      "overall": 559681
+    },
+    "percentageDifference": {
+      "jokowi": -9,
+      "prabowo": 8.99
+    }
+  },
+  {
+    "provinceNameId": "Sumatra Selatan",
+    "provinceNameEn": "South Sumatra",
+    "provinceIso": "ID.SL",
+    "result2014": {
+      "prabowo": {
+        "votes": 2132163,
+        "percentage": 51.26
+      },
+      "jokowi": {
+        "votes": 2027049,
+        "percentage": 48.74
+      },
+      "difference": {
+        "percentage": 2.52
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 2877781,
+        "percentage": 59.7
+      },
+      "jokowi": {
+        "votes": 1942987,
+        "percentage": 40.3
+      },
+      "difference": {
+        "percentage": 19.4
+      }
+    },
+    "voteDifference": {
+      "jokowi": -84062,
+      "prabowo": 745618,
+      "overall": 661556
+    },
+    "percentageDifference": {
+      "jokowi": -8.44,
+      "prabowo": 8.44
+    }
+  },
+  {
+    "provinceNameId": "Sumatra Utara",
+    "provinceNameEn": "North Sumatra",
+    "provinceIso": "ID.SU",
+    "result2014": {
+      "prabowo": {
+        "votes": 2831514,
+        "percentage": 44.76
+      },
+      "jokowi": {
+        "votes": 3494835,
+        "percentage": 55.24
+      },
+      "difference": {
+        "percentage": 10.48
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 3587786,
+        "percentage": 47.68
+      },
+      "jokowi": {
+        "votes": 3936515,
+        "percentage": 52.32
+      },
+      "difference": {
+        "percentage": 4.64
+      }
+    },
+    "voteDifference": {
+      "jokowi": 441680,
+      "prabowo": 756272,
+      "overall": 1197952
+    },
+    "percentageDifference": {
+      "jokowi": -2.92,
+      "prabowo": 2.92
+    }
+  },
+  {
+    "provinceNameId": "Banten",
+    "provinceNameEn": "Banten",
+    "provinceIso": "ID.BT",
+    "result2014": {
+      "prabowo": {
+        "votes": 3192671,
+        "percentage": 57.1
+      },
+      "jokowi": {
+        "votes": 2398631,
+        "percentage": 42.9
+      },
+      "difference": {
+        "percentage": 14.2
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 4059514,
+        "percentage": 61.54
+      },
+      "jokowi": {
+        "votes": 2537524,
+        "percentage": 38.46
+      },
+      "difference": {
+        "percentage": 23.08
+      }
+    },
+    "voteDifference": {
+      "jokowi": 138893,
+      "prabowo": 866843,
+      "overall": 1005736
+    },
+    "percentageDifference": {
+      "jokowi": -4.44,
+      "prabowo": 4.44
+    }
+  },
+  {
+    "provinceNameId": "Aceh",
+    "provinceNameEn": "Aceh",
+    "provinceIso": "ID.AC",
+    "result2014": {
+      "prabowo": {
+        "votes": 1089290,
+        "percentage": 54.93
+      },
+      "jokowi": {
+        "votes": 913309,
+        "percentage": 45.61
+      },
+      "difference": {
+        "percentage": 9.32
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 2400746,
+        "percentage": 85.59
+      },
+      "jokowi": {
+        "votes": 404188,
+        "percentage": 14.41
+      },
+      "difference": {
+        "percentage": 71.18
+      }
+    },
+    "voteDifference": {
+      "jokowi": -509121,
+      "prabowo": 1311456,
+      "overall": 802335
+    },
+    "percentageDifference": {
+      "jokowi": -31.2,
+      "prabowo": 30.66
+    }
+  },
+  {
+    "provinceNameId": "Sulawesi Selatan",
+    "provinceNameEn": "South Sulawesi",
+    "provinceIso": "ID.SE",
+    "result2014": {
+      "prabowo": {
+        "votes": 1214857,
+        "percentage": 28.57
+      },
+      "jokowi": {
+        "votes": 3037026,
+        "percentage": 71.43
+      },
+      "difference": {
+        "percentage": 42.86
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 2809393,
+        "percentage": 57.02
+      },
+      "jokowi": {
+        "votes": 2117591,
+        "percentage": 42.98
+      },
+      "difference": {
+        "percentage": 14.04
+      }
+    },
+    "voteDifference": {
+      "jokowi": -919435,
+      "prabowo": 1594536,
+      "overall": 675101
+    },
+    "percentageDifference": {
+      "jokowi": -28.45,
+      "prabowo": 28.45
+    }
+  },
+  {
+    "provinceNameId": "Jawa Barat",
+    "provinceNameEn": "West Java",
+    "provinceIso": "ID.JR",
+    "result2014": {
+      "prabowo": {
+        "votes": 14167381,
+        "percentage": 59.78
+      },
+      "jokowi": {
+        "votes": 9530315,
+        "percentage": 40.22
+      },
+      "difference": {
+        "percentage": 19.56
+      }
+    },
+    "result2019": {
+      "prabowo": {
+        "votes": 16077446,
+        "percentage": 59.93
+      },
+      "jokowi": {
+        "votes": 10750568,
+        "percentage": 40.07
+      },
+      "difference": {
+        "percentage": 19.86
+      }
+    },
+    "voteDifference": {
+      "jokowi": 1220253,
+      "prabowo": 1910065,
+      "overall": 3130318
+    },
+    "percentageDifference": {
+      "jokowi": -0.15,
+      "prabowo": 0.15
     }
   }
 ]

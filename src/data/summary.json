@@ -62,17 +62,17 @@
           },
           {
             "provinceNameEn": "Central Java",
-            "provinceNameId": "Papua",
+            "provinceNameId": "Jawa Tengah",
             "num": 3865971
           },
           {
             "provinceNameEn": "West Java",
-            "provinceNameId": "Nusa Tenggara Timur",
+            "provinceNameId": "Jawa Barat",
             "num": 1220253
           },
           {
             "provinceNameEn": "Papua",
-            "provinceNameId": "Papua Barat",
+            "provinceNameId": "Papua",
             "num": 994978
           },
           {
@@ -167,54 +167,54 @@
     "votes": [
       {
         "provinceNameEn": "West Java",
-        "provinceNameId": "East Java",
+        "provinceNameId": "Jawa Barat",
         "num": 16077446
       },
       {
         "provinceNameEn": "East Java",
-        "provinceNameId": "Bali",
+        "provinceNameId": "Jawa Timur",
         "num": 8441247
       },
       {
         "provinceNameEn": "Central Java",
-        "provinceNameId": "Bali",
+        "provinceNameId": "Jawa Tengah",
         "num": 4944447
       },
       {
         "provinceNameEn": "Banten",
-        "provinceNameId": "Bali",
+        "provinceNameId": "Banten",
         "num": 4059514
       },
       {
         "provinceNameEn": "North Sumatra",
-        "provinceNameId": "Bali",
+        "provinceNameId": "Sumatra Utara",
         "num": 3587786
       }
     ],
     "percentage": [
       {
         "provinceNameEn": "West Sumatra",
-        "provinceNameId": "Bali",
+        "provinceNameId": "Sumatra Barat",
         "num": 85.91
       },
       {
         "provinceNameEn": "Aceh",
-        "provinceNameId": "Bali",
+        "provinceNameId": "Aceh",
         "num": 85.59
       },
       {
         "provinceNameEn": "West Nusa Tenggara",
-        "provinceNameId": "Bali",
+        "provinceNameId": "Nusa Tenggara Barat",
         "num": 67.89
       },
       {
         "provinceNameEn": "South Kalimantan",
-        "provinceNameId": "Bali",
+        "provinceNameId": "Kalimantan Selatan",
         "num": 64.08
       },
       {
         "provinceNameEn": "Banten",
-        "provinceNameId": "Bali",
+        "provinceNameId": "Banten",
         "num": 61.54
       }
     ],
@@ -324,6 +324,57 @@
         "provinceNameEn": "Gorontalo",
         "provinceNameId": "Gorontalo",
         "num": 14.83
+      }
+    ]
+  },
+  "overall": {
+    "voteIncrease": [
+      {
+        "provinceNameEn": "West Java",
+        "provinceNameId": "Jawa Barat",
+        "num": 3130318
+      },
+      {
+        "provinceNameEn": "East Java",
+        "provinceNameId": "Jawa Timur",
+        "num": 2726514
+      },
+      {
+        "provinceNameEn": "Central Java",
+        "provinceNameId": "Jawa Tengah",
+        "num": 2324698
+      },
+      {
+        "provinceNameEn": "North Sumatra",
+        "provinceNameId": "Sumatra Utara",
+        "num": 1197952
+      },
+      {
+        "provinceNameEn": "Banten",
+        "provinceNameId": "Banten",
+        "num": 1005736
+      }
+    ],
+    "closeRaces": [
+      {
+        "provinceNameEn": "Bengkulu",
+        "provinceNameId": "Bengkulu",
+        "num": 0.22
+      },
+      {
+        "provinceNameEn": "DKI Jakarta",
+        "provinceNameId": "Jawa Timur",
+        "num": 3.36
+      },
+      {
+        "provinceNameEn": "Gorontalo",
+        "provinceNameId": "Jawa Tengah",
+        "num": 3.40
+      },
+      {
+        "provinceNameEn": "North Sumatra",
+        "provinceNameId": "Sumatra Utara",
+        "num": 4.64
       }
     ]
   }
