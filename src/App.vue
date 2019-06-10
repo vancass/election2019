@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h2>Indonesian Presidential Election 2019</h2>
+    <h1>Indonesian Presidential Election 2019</h1>
     <div class="map-type">
       <div class="map-type--choice" v-for="(type, index) in mapTypes" :key="index" :class="{'type-selected' : typeSelected === index}">
         <input type="radio" name="nav" :id="type" :value="index" v-model="typeSelected"/>
@@ -87,6 +87,7 @@
       </l-choropleth-layer>
     </l-map>
     <Summary :type="typeSelected"/>
+    <Analysis :type="typeSelected" />
   </div>
 </template>
 
@@ -95,6 +96,7 @@ import InfoControl from './components/InfoControl';
 // import ReferenceChart from './components/ReferenceChart';
 import ChoroplethLayer from './components/ChoroplethLayer';
 import Summary from './components/Summary';
+import Analysis from './components/Analysis';
 
 import indonesiaGeoJson from './data/indonesia.json';
 import electionResult from './data/election_result.json';
@@ -107,7 +109,8 @@ export default {
     'l-info-control': InfoControl, 
     // 'l-reference-chart': ReferenceChart, 
     'l-choropleth-layer': ChoroplethLayer ,
-    Summary
+    Summary,
+    Analysis
   },
   data() {
     return {
@@ -142,7 +145,7 @@ export default {
             metric: '% Prabowo'
           },
           {
-            key: 'voteDifference.overall',
+            key: 'result2019.difference.percentage',
             metric: '% margin'
           },
         ],
@@ -181,11 +184,11 @@ export default {
           },
           {
             key: 'voteDifference.jokowi',
-            metric: ' votes'
+            metric: ' Jokowi 2019'
           },
           {
             key: 'voteDifference.prabowo',
-            metric: ' votes'
+            metric: ' Prabowo 2019'
           }
         ]
       ]
@@ -202,7 +205,7 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-h2 {
+h1 {
   text-align: center;
 }
 
