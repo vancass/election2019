@@ -6,7 +6,7 @@
                 <section class="summary-block c-blue">
                     <h3>Top 5 Jokowi  supporters (%):</h3>
                     <ol>
-                        <li v-for="summary in summary.jokowi.percentage" :key="summary">
+                        <li v-for="(summary, index) in summary.jokowi.percentage" :key="index">
                             <SummaryValue :name="summary.provinceNameEn" :value="summary.num + '%'"/>
                         </li>
                     </ol>
@@ -14,7 +14,7 @@
                 <section class="summary-block c-red">
                     <h3>Top 5 Prabowo supporters (%):</h3>
                     <ol>
-                        <li v-for="summary in summary.prabowo.percentage" :key="summary">
+                        <li v-for="(summary, index) in summary.prabowo.percentage" :key="index">
                             <SummaryValue :name="summary.provinceNameEn" :value="summary.num + '%'"/>
                         </li>
                     </ol>
@@ -22,7 +22,7 @@
                 <section class="summary-block c-blue">
                     <h3>Top 5 Jokowi supporters (votes):</h3>
                     <ol>
-                        <li v-for="summary in summary.jokowi.votes" :key="summary">
+                        <li v-for="(summary, index) in summary.jokowi.votes" :key="index">
                             <SummaryValue :name="summary.provinceNameEn" :value="addThousandComma(summary.num)"/>
                         </li> 
                     </ol>
@@ -30,7 +30,7 @@
                 <section class="summary-block c-red">
                     <h3>Top 5 Prabowo supporters (votes):</h3>
                     <ol>
-                        <li v-for="summary in summary.prabowo.votes" :key="summary">
+                        <li v-for="(summary, index) in summary.prabowo.votes" :key="index">
                             <SummaryValue :name="summary.provinceNameEn" :value="addThousandComma(summary.num)"/>
                         </li> 
                     </ol>
