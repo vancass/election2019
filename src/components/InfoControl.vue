@@ -49,6 +49,8 @@ export default {
       type
     }) {
       if (name.length > 0) {
+        let sign = '';
+
         switch (type) {
           case 1:
             /**
@@ -91,8 +93,13 @@ export default {
             this._div.innerHTML = `<h4> ${title} </h4> <b> ${name} </b>`;
 
             this._div.innerHTML = this._div.innerHTML + `<br/> ${addThousandComma(values[0].value)} increase`;
-            this._div.innerHTML = this._div.innerHTML + `<br/> ${addThousandComma(values[1].value)} ${values[1].metric}`;
-            this._div.innerHTML = this._div.innerHTML + `<br/> ${addThousandComma(values[2].value)} ${values[2].metric}`;
+
+            if (values[1].value > 0 ) sign = '+';
+            this._div.innerHTML = this._div.innerHTML + `<br/> ${sign}${addThousandComma(values[1].value)} ${values[1].metric}`;
+
+            if (values[2].value > 0 ) sign = '+';
+            else sign = '';
+            this._div.innerHTML = this._div.innerHTML + `<br/> ${sign}${addThousandComma(values[2].value)} ${values[2].metric}`;
 
             break;
 
