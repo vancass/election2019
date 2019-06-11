@@ -26,7 +26,7 @@
       >
         <template slot-scope="props">
           <l-info-control :item="props.currentItem" title="" placeholder="Hover for more info" :type="1"/>
-          <!-- <l-reference-chart title="Girls school enrolment" :colorScale="colorScale" :min="props.min" :max="props.max" position="topright"/> -->
+          <l-reference-chart color1="blue" color2="red" title1="Jokowi" title2="Prabowo" position="topright"/>
         </template>
       </l-choropleth-layer>
       <l-choropleth-layer 
@@ -45,7 +45,7 @@
       >
         <template slot-scope="props">
           <l-info-control :item="props.currentItem" title="" placeholder="Hover for more info" :type="2"/>
-          <!-- <l-reference-chart title="Girls school enrolment" :colorScale="colorScale" :min="props.min" :max="props.max" position="topright"/> -->
+          <l-reference-chart color1="green" color2="red" title1="Increase" title2="Decrease" position="topright"/>
         </template>
       </l-choropleth-layer>
       <l-choropleth-layer 
@@ -64,7 +64,7 @@
       >
         <template slot-scope="props">
           <l-info-control :item="props.currentItem" title="" placeholder="Hover for more info" :type="2"/>
-          <!-- <l-reference-chart title="Girls school enrolment" :colorScale="colorScale" :min="props.min" :max="props.max" position="topright"/> -->
+          <l-reference-chart color1="green" color2="red" title1="Increase" title2="Decrease" position="topright"/>
         </template>
       </l-choropleth-layer>
       <l-choropleth-layer 
@@ -83,7 +83,7 @@
       >
         <template slot-scope="props">
           <l-info-control :item="props.currentItem" title="" placeholder="Hover for more info" :type="3"/>
-          <!-- <l-reference-chart title="Girls school enrolment" :colorScale="colorScale" :min="props.min" :max="props.max" position="topright"/> -->
+          <l-reference-chart color1="green" color2="" title1="Increase" title2="" position="topright"/>
         </template>
       </l-choropleth-layer>
     </l-map>
@@ -94,7 +94,7 @@
 
 <script>
 import InfoControl from './components/InfoControl';
-// import ReferenceChart from './components/ReferenceChart';
+import ReferenceChart from './components/ReferenceChart';
 import ChoroplethLayer from './components/ChoroplethLayer';
 import Summary from './components/Summary';
 import Analysis from './components/Analysis';
@@ -108,7 +108,7 @@ export default {
   components: { 
     LMap,
     'l-info-control': InfoControl, 
-    // 'l-reference-chart': ReferenceChart, 
+    'l-reference-chart': ReferenceChart, 
     'l-choropleth-layer': ChoroplethLayer ,
     Summary,
     Analysis
@@ -153,7 +153,7 @@ export default {
         [
           {
             key: 'voteDifference.jokowi',
-            metric: ' votes margin'
+            metric: ' votes'
           },
           {
             key: 'result2019.jokowi.votes',
@@ -167,7 +167,7 @@ export default {
         [
           {
             key: 'voteDifference.prabowo',
-            metric: ' votes margin'
+            metric: ' votes'
           },
           {
             key: 'result2019.prabowo.votes',

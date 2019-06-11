@@ -1,82 +1,58 @@
 <template>
-    
+    <div/>
 </template>
 <script>
-import chroma from "chroma-js"
-
-import {validNumber} from "../util"
 export default {
   props: {
-    colorScale: null,
-    title: String,
-    min: null,
-    max: null,
+    color1: String,
+    color2: String,
+    title1: String,
+    title2: String,
     position: {
       type: String,
       default: "topright"
     }
   },
   mounted() {
-    const { colorScale, title, min, max, position } = this
+    const { color1, color2, title1, title2, position } = this;
+    // Put the object to the position
+    // eslint-disable-next-line
     this.mapObject = L.control({
       position: position
     })
-    this.mapObject.onAdd = function(map) {
-      this._div = L.DomUtil.create("div", "info") // create a div with a class "info"
-      this.update({min, max, colorScale, title})
+
+    this.mapObject.onAdd = function() {
+      // eslint-disable-next-line
+      this._div = L.DomUtil.create("div", "info"); // create a div with a class "info"
+      this.update({color1, color2, title1, title2});
       return this._div
     }
 
-    this.mapObject.update = function({min, max, colorScale, title}) {
-      let labels = []
-      let med = (min + max) / 2
-      med = Math.round(med * 100) / 100
-      let roundedMin = Math.round(min * 100) / 100
-      let roundedMax = Math.round(max * 100) / 100
-      let colors = chroma
-        .scale(colorScale)
-        .mode("lch")
-        .colors(100)
+    this.mapObject.update = function({color1, color2, title1, title2}) {
+      
+      // this._div.innerHTML = `<span>${title}</span><br>` + gradiente
+      this._div.innerHTML = `<div><span class="block" style="background-color: ${color1}"></span><span>${title1}</span></div>`;
 
-      let gradiente = '<div class="gradient">'
-
-      for (let color of colors) {
-        gradiente += `<span class="grad-step" style="background-color:${color}"></span>`
+      if (color2 !== "") {
+        this._div.innerHTML += `<div><span class="block" style="background-color: ${color2}"></span><span>${title2}</span></div>`;
       }
-      gradiente += `
-                <span class="domain-min">${validNumber(roundedMin) ? roundedMin.toString() : ""}</span>
-                <span class="domain-med">
-                ${validNumber(med) ? med.toString() : ""}
-                </span>
-                <span class="domain-max">
-                ${validNumber(roundedMax) ? roundedMax.toString(): ""}
-                </span>
-                </div>`
-      this._div.innerHTML = `<span>${title}</span><br>` + gradiente
     }
 
     if (this.$parent._isMounted) {
-      this.deferredMountedTo(this.$parent.mapObject)
+      this.deferredMountedTo(this.$parent.mapObject);
     }
   },
   methods: {
     deferredMountedTo(parent) {
-      this.parent = parent
-      this.mapObject.addTo(parent)
+      this.parent = parent;
+      this.mapObject.addTo(parent);
     }
-  },
-  watch: {
-    min() {
-      this.mapObject.update(this);
-    },
-    max() {
-      this.mapObject.update(this);
-    },
   },
   beforeDestroy() {
     if (this.parent) {
       this.parent.removeLayer(this.mapObject)
     }
+    this.mapObject.remove();
   }
 }
 </script>
@@ -85,41 +61,11 @@ export default {
   display: block;
 }
 
-.gradient {
-  width: 95%;
-  margin: 0 auto;
-  white-space: nowrap;
-  position: relative;
-  top: 6px;
-  padding-bottom: 15px;
-}
-
-.grad-step {
+.block {
+  width: 10px;
+  height: 10px;
   display: inline-block;
-  height: 20px;
-  width: 1%;
+  margin-right: 10px;
 }
 
-.gradient .domain-min {
-  position: absolute;
-  left: 0;
-  font-size: 11px;
-  bottom: 3px;
-}
-
-.gradient .domain-med {
-  position: absolute;
-  right: 25%;
-  left: 25%;
-  text-align: center;
-  font-size: 11px;
-  bottom: 3px;
-}
-
-.gradient .domain-max {
-  position: absolute;
-  right: 0;
-  font-size: 11px;
-  bottom: 3px;
-}
 </style>
