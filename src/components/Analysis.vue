@@ -27,7 +27,7 @@
                     In 2019, Jokowi managed to strengthen his position in Bali and Papua, increasing his vote percentage from ~70% to ~90% in those two provinces.
                 </li>
                 <li>
-                    According to the news and opinion, North Sulawesi's increase in support for Jokowi is because during Jokowi's term, the development of the area can be felt by the citizens.[1][2] 
+                    According to the news and opinion, North Sulawesi's increase in support for Jokowi is because during Jokowi's term, the development of the area can be felt by the citizens<sup>[1][2]</sup>.
                     We can also take note that the majority in North Sulawesi is Christian.
                 </li>
                 <li>
@@ -36,19 +36,19 @@
                 </li>
                 <li>
                     Jokowi's decrease of support in South Sulawesi is mainly because he was never that popular in South Sulawesi. 
-                    In the previous election, the people voted for him because his running mate, Jusuf Kalla, was from the province. [3]
+                    In the previous election, the people voted for him because his running mate, Jusuf Kalla, was from the province <sup>[3]</sup>. 
                     Interestingly, even though Jusuf Kalla declared his support for Jokowi for the 2019 election, there is still huge decrease of votes from South Sulawesi. 
                     We can also take note that South Sulawesi has a lot of Muslim population, although it's not certain how big is the influence of religion here. 
-                    The biggest reason for the voters' swing to Prabowo might be because his running mate, Sandiaga Uno, is a descendant of the Bugis tribe, one of the tribes in South Sulawesi.[4]
+                    The biggest reason for the voters' swing to Prabowo might be because his running mate, Sandiaga Uno, is a descendant of the Bugis tribe, one of the tribes in South Sulawesi <sup>[4]</sup>.
                 </li>
                 <li>
                     Overall, it seems that places with the most number of radical Muslims (Aceh, West Sumatra, Riau) has lesser support for Jokowi. On the other hand, places with higher number of religious minorities (Bali, North Sulawesi, East Nusa Tenggara) tend to have more support for Jokowi.
                 </li>
             </ol>
-            [1]: http://manado.tribunnews.com/2019/04/18/suara-jokowi-di-sulut-capai-85-persen-warga-miangas-antusias-pilih-capres-01
-            [2]: https://www.kompasiana.com/marhaenaputra/5cbaed2acc52831efd32b3c2/mengapa-rakyat-sulawesi-utara-memilih-jokowi-ma-ruf-di-pilpres-2019
-            [3]: https://beritagar.id/artikel/berita/magnet-jk-bagi-suara-jokowi-di-makassar
-            [4]: https://regional.kompas.com/jeo/sulsel-peta-tak-terprediksi-jokowi-maruf-vs-prabowo-sandiaga
+            <p id="note-1">[1]: <a href="http://manado.tribunnews.com/2019/04/18/suara-jokowi-di-sulut-capai-85-persen-warga-miangas-antusias-pilih-capres-01" target="_blank" rel="noreferrer noopener">http://manado.tribunnews.com/2019/04/18/suara-jokowi-di-sulut-capai-85-persen-warga-miangas-antusias-pilih-capres-01</a></p>
+            <p id="note-2">[2]: <a href="https://www.kompasiana.com/marhaenaputra/5cbaed2acc52831efd32b3c2/mengapa-rakyat-sulawesi-utara-memilih-jokowi-ma-ruf-di-pilpres-2019" target="_blank" rel="noreferrer noopener">https://www.kompasiana.com/marhaenaputra/5cbaed2acc52831efd32b3c2/mengapa-rakyat-sulawesi-utara-memilih-jokowi-ma-ruf-di-pilpres-2019</a></p>
+            <p id="note-3">[3]: <a href="https://beritagar.id/artikel/berita/magnet-jk-bagi-suara-jokowi-di-makassar" target="_blank" rel="noreferrer noopener">https://beritagar.id/artikel/berita/magnet-jk-bagi-suara-jokowi-di-makassar</a></p>
+            <p id="note-4">[4]: <a href="https://regional.kompas.com/jeo/sulsel-peta-tak-terprediksi-jokowi-maruf-vs-prabowo-sandiaga" target="_blank" rel="noreferrer noopener">https://regional.kompas.com/jeo/sulsel-peta-tak-terprediksi-jokowi-maruf-vs-prabowo-sandiaga</a></p>
         </section>
         <section v-if="type==2">
             <ol>
@@ -96,11 +96,24 @@ export default {
 <style scoped>
 .analysis-container {
     padding: 20px;
+    padding-top: 0;
     margin-bottom: 40px;
 }
 
 li {
     margin-bottom: 20px;
+}
+
+a {
+    word-break: break-all;
+}
+
+#note-1, #note-2, #note-3, #note-4 {
+    font-size: 12px;
+}
+
+#note-1 {
+    margin-top: 30px;
 }
 
 .footnote {
