@@ -49,7 +49,7 @@ export default {
       type
     }) {
       if (name.length > 0) {
-        let sign = '';
+        let sign = '', text = '';
 
         switch (type) {
           case 1:
@@ -61,9 +61,21 @@ export default {
             */
 
             this._div.innerHTML = `<h4> ${title} </h4> <b> ${name} </b>`;
-            values.forEach( d => {
-              this._div.innerHTML = this._div.innerHTML + `<br/> ${d.value} ${d.metric}`;
-            });
+            // values.forEach( d => {
+            //   this._div.innerHTML = this._div.innerHTML + `<br/> ${d.value} ${d.metric}`;
+            // });
+
+            if (values[0].value > 50) {
+              this._div.innerHTML = this._div.innerHTML + `<br/> <span class="c-blue fw-bold">${values[0].value} ${values[0].metric}</span>`;
+              this._div.innerHTML = this._div.innerHTML + `<br/> <span class="c-red">${values[1].value} ${values[1].metric}`;
+            }
+            else {
+              this._div.innerHTML = this._div.innerHTML + `<br/> <span class="c-blue">${values[0].value} ${values[0].metric}</span>`;
+              this._div.innerHTML = this._div.innerHTML + `<br/> <span class="c-red fw-bold">${values[1].value} ${values[1].metric}`;
+            }
+              
+            this._div.innerHTML = this._div.innerHTML + `<br/> ${values[2].value} ${values[2].metric}`;
+
 
             break;
 
@@ -162,5 +174,21 @@ export default {
 .info h4 {
   margin: 0 0 5px;
   color: #777;
+}
+
+.c-blue {
+    color: #00007e;
+}
+
+.c-red {
+    color: #850000;
+}
+
+.c-green {
+    color: #008000;
+}
+
+.fw-bold {
+  font-weight: bold;
 }
 </style>
