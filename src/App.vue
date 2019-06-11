@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <h1>Indonesian Presidential Election 2019</h1>
+    <h2 class="title">Indonesian Presidential Election 2019</h2>
+    <h5 class="subtitle">Interactive summary and analysis</h5>
     <div class="map-type">
       <div class="map-type--choice" v-for="(type, index) in mapTypes" :key="index" :class="{'type-selected' : typeSelected === index}">
         <input type="radio" name="nav" :id="type" :value="index" v-model="typeSelected"/>
@@ -127,7 +128,7 @@ export default {
       },
       // currentStrokeColor: '3d3213',
       mapTypes: [
-        '2019 overall percentage',
+        '2019 Jokowi & Prabowo overall',
         // '2019 Jokowi',
         '2014-2019 Jokowi\'s votes difference',
         '2014-2019 Prabowo\'s votes difference',
@@ -205,9 +206,17 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-h1 {
+.title, .subtitle {
   text-align: center;
   font-family: 'Lustria', sans-serif;
+}
+
+.title {
+  margin-bottom: 0;
+}
+
+.subtitle {
+  margin-top: 0;
 }
 
 #map {
@@ -217,15 +226,17 @@ h1 {
 .map-type {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  padding: 0 20px;
+  justify-content: space-evenly;
+  /* padding: 0 20px; */
+  flex-wrap: wrap;
 }
 
 .map-type--choice {
   min-height: 100%;
-  max-width: 250px;
+  max-width: 200px;
   display: inline-block;
   margin-right: 10px;
+  margin-bottom: 10px;
   text-align: center;
   background-color: white;
   color: #212b36;
