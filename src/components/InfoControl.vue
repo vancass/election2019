@@ -49,7 +49,7 @@ export default {
       type
     }) {
       if (name.length > 0) {
-        let sign = '', text = '';
+        let sign = '';
 
         switch (type) {
           case 1:
@@ -88,7 +88,10 @@ export default {
              */
             this._div.innerHTML = `<h4> ${title} </h4> <b> ${name} </b>`;
 
-            this._div.innerHTML = this._div.innerHTML + `<br/> ${addThousandComma(values[0].value)} ${values[0].metric}`;
+            if (values[0].value > 0 ) sign = '+';
+            else sign = '';
+
+            this._div.innerHTML = this._div.innerHTML + `<br/> ${sign}${addThousandComma(values[0].value)} ${values[0].metric}`;
             this._div.innerHTML = this._div.innerHTML + `<br/> <strong>2019:</strong> ${addThousandComma(values[1].value)}`;
             this._div.innerHTML = this._div.innerHTML + `<br/> <strong>2014:</strong> ${addThousandComma(values[2].value)}`;
 
