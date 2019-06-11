@@ -4,14 +4,13 @@
         <section v-if="type==0">
             <ol>
                 <li>
-                    The province with the highest percentage of support for Jokowi is Bali. This might be mainly because Bali has the highest number of supporters for PDI-P party and the Hindu majority in Bali are not fond of Prabowo and the radicalism that supports him.
+                    The province with the highest percentage of support for Jokowi is Bali. This might be mainly because Bali has the highest number of supporters for PDI-P party and the Hindu majority in Bali are not fond of Prabowo and the radical Muslims who support him.
                 </li>
                 <li>
                     Papua is the 2nd highest of Jokowi supporters in terms of percentage. This might be mainly because Jokowi has been developing Papua by building infrastructures and such.
-                    Moreover, in Papua, the tribe will follow the tribe leader's choice. This leads to vote result that can be lopsided. 
                 </li>
                 <li>
-                    Top 3 Prabowo's supporters in terms of percentage are West Sumatra, Aceh, and West Nusa Tenggara, whom population are mostly religious Muslims.
+                    Top 3 Prabowo's supporters in terms of percentage are West Sumatra, Aceh, and West Nusa Tenggara, of whom the population mostly consists of religious Muslims.
                 </li>
                 <li>
                     In terms of the number of votes, the top 3 for both Jokowi and Prabowo are: Central Java, East Java, and West Java. This emphasizes the fact that Java island houses most of Indonesia population.
