@@ -255,7 +255,7 @@ body {
 }
 
 .map-type--choice:hover {
-  background-color: #800080;
+  background-color: #728065;
   color: white;
   transition-property: background-color;
   transition-duration: 0.3s;
@@ -266,7 +266,7 @@ input[type='radio'] {
 }
 
 .type-selected {
-  background-color: #800080;
+  background-color: #728065;
   color: white;
   transition-property: background-color;
   transition-duration: 0.3s;
