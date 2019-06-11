@@ -35,6 +35,16 @@
                         </li> 
                     </ol>
                 </section>
+                <section class="summary-block">
+                    <h3>Close races (%):</h3>
+                    <ol>
+                        <li v-for="(summary, index) in summary.overall.closeRaces" :key="index">
+                            <SummaryValue :name="summary.provinceNameEn" :value="summary.num + '%'"/>
+                            
+                        </li>
+                    </ol>
+                    <p class="summary--note">Margin of victory is between 0% to 5%</p>
+                </section>
             </div>
         </section>
         <section class="summary-container" v-if="type==1">
@@ -127,16 +137,6 @@
                             
                         </li>
                     </ol>
-                </section>
-                <section class="summary-block">
-                    <h3>Close races (%):</h3>
-                    <ol>
-                        <li v-for="(summary, index) in summary.overall.closeRaces" :key="index">
-                            <SummaryValue :name="summary.provinceNameEn" :value="summary.num + '%'"/>
-                            
-                        </li>
-                    </ol>
-                    <p class="summary--note">Margin of victory is between 0% to 5%</p>
                 </section>
             </div>
         </section>
