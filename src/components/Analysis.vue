@@ -80,7 +80,7 @@
                 </li>
             </ol>
         </section>
-        <p class="footnote">If you want to contribute, please contact me on <a href="https://twitter.com/vancassa">Twitter</a>.</p>
+        <p class="footnote">Source: KPU</p>
     </div>
 </template>
 
