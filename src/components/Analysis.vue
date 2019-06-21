@@ -68,19 +68,10 @@
                     The highest increase in the number of voters can be seen from provinces with the biggest population: provinces in Java island and North Sumatra.
                 </li>
                 <li>
-                    Out of the 1,197,952 vote increase in North Sumatra, +37% goes to Jokowi and +63% goes to Prabowo. Overall, North Sumatra is won by Jokowi by a small margin (52.3%).
-                </li>
-                <li>
-                    Out of the 3,130,318 vote increase in West Java, 39% goes to Jokowi and 41% goes to Prabowo. Overall, Prabowo receives 59.9% of total votes in West Java. 
-                    West Java is interesting because it has been the base of PKS (Social Justice Party), which is the supporter of Prabowo. 
-                    On the other hand, West Java governor, Ridwan Kamil, is the supporter of Jokowi.
-                </li>
-                <li>
                     Jokowi gained a lot of supporters in East Java and Central Java, which are the base of PDI-P. This can be seen as the key to his victory.
                 </li>
             </ol>
         </section>
-        <p class="footnote">Source: KPU</p>
     </div>
 </template>
 
@@ -94,9 +85,8 @@ export default {
 
 <style scoped>
 .analysis-container {
-    padding: 20px;
     padding-top: 0;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
 li {
@@ -115,9 +105,4 @@ a {
     margin-top: 30px;
 }
 
-.footnote {
-    font-size: 14px;
-    font-style: italic;
-    margin-top: 60px;
-}
 </style>

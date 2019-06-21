@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <section class="summary-container" v-if="type==0">
+    <div class="summary-container">
+        <section v-if="type==0">
             <h2>2019 Overall Summary</h2>
             <div class="summary-content">
                 <section class="summary-block c-blue">
@@ -37,17 +37,17 @@
                 </section>
                 <section class="summary-block">
                     <h3>Close races (%):</h3>
+                    <p class="summary--note">Margin of victory is between 0% to 5%</p>
                     <ol>
                         <li v-for="(summary, index) in summary.overall.closeRaces" :key="index">
                             <SummaryValue :name="summary.provinceNameEn" :value="summary.num + '%'"/>
                             
                         </li>
                     </ol>
-                    <p class="summary--note">Margin of victory is between 0% to 5%</p>
                 </section>
             </div>
         </section>
-        <section class="summary-container" v-if="type==1">
+        <section v-if="type==1">
             <h2>Jokowi 2014-2019 Summary</h2>
             <div class="summary-content">
                 <section class="summary-block c-green">
@@ -87,7 +87,7 @@
                 </section>
             </div>
         </section>
-        <section class="summary-container" v-if="type==2">
+        <section v-if="type==2">
             <h2>Prabowo 2014-2019 Summary</h2>
             <div class="summary-content">
                 <section class="summary-block c-green">
@@ -126,7 +126,7 @@
                 </section>
             </div>
         </section>
-        <section class="summary-container" v-if="type==3">
+        <section v-if="type==3">
             <h2>2014-2019 Overall Summary</h2>
             <div class="summary-content">
                 <section class="summary-block c-green">
@@ -140,6 +140,7 @@
                 </section>
             </div>
         </section>
+        <p class="footnote">Source: KPU</p>
     </div>
 </template>
 
@@ -185,9 +186,8 @@ ol {
 .summary-container {
     display: flex;
     flex-direction: column;
-    padding: 20px;
     margin: auto;
-    /* max-width: 700px; */
+    margin-bottom: 40px;
 }
 .summary-content {
     display: inline-flex;
@@ -215,6 +215,11 @@ ol {
 
 .summary--note {
     font-size: 12px;
+}
+
+.footnote {
+    font-size: 14px;
+    font-style: italic;
 }
 
 </style>
