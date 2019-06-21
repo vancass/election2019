@@ -261,6 +261,18 @@ footer {
   padding: 20px;
 }
 
+a {
+  color: #658C87;
+}
+
+a:visited {
+  color: #658C87;
+}
+
+a:hover {
+  color: rgb(136, 189, 182);
+}
+
 .social{
   flex-grow: 1;
   /* font-size: 12px; */
@@ -358,11 +370,5 @@ input[type='radio'] {
   transition-duration: 0.3s;
 }
 
-a {
-  color: #658C87;
-}
 
-a:visited {
-  color: #658C87;
-}
 </style>
