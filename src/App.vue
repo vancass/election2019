@@ -1,94 +1,108 @@
 <template>
   <div id="app">
-    <h2 class="title">Indonesian Presidential Election 2019</h2>
-    <h5 class="subtitle">Interactive summary and analysis</h5>
-    <div class="map-type">
-      <div class="map-type--choice" v-for="(type, index) in mapTypes" :key="index" :class="{'type-selected' : typeSelected === index}">
-        <input type="radio" name="nav" :id="type" :value="index" v-model="typeSelected"/>
-        <label class="map-type--label" :for="type" >{{type}}</label>
+    <main id="top">
+      <h2 class="title">Indonesian Presidential Election 2019</h2>
+      <h5 class="subtitle">Interactive summary and analysis</h5>
+      <div class="map-type">
+        <div class="map-type--choice" v-for="(type, index) in mapTypes" :key="index" :class="{'type-selected' : typeSelected === index}">
+          <input type="radio" name="nav" :id="type" :value="index" v-model="typeSelected"/>
+          <label class="map-type--label" :for="type" >{{type}}</label>
+        </div>
       </div>
-    </div>
-    
-    <l-map :center="[-0.7893, 113.9213]" :zoom="5" style="height: 400px;margin-top: 10px;" :options="mapOptions">
-      <l-choropleth-layer 
-        v-if="typeSelected == 0"
-        :key=0
-        :data="electionResult" 
-        titleKey="provinceNameEn" 
-        idKey="provinceIso" 
-        geojsonIdKey="code_hasc" 
-        :values="values[0]" 
-        :geojson="indonesiaGeoJson"
-        :colorScale1="colorScaleRed" 
-        :colorScale2="colorScaleBlue"
-        :twoColor=true
-        :compareTwoValues=true
-      >
-        <template slot-scope="props">
-          <l-info-control :item="props.currentItem" title="" placeholder="Hover for more info" :type="1"/>
-          <l-reference-chart color1="blue" color2="red" title1="Jokowi" title2="Prabowo" position="topright"/>
-        </template>
-      </l-choropleth-layer>
-      <l-choropleth-layer 
-        v-if="typeSelected == 1"
-        :key=1
-        :data="electionResult" 
-        titleKey="provinceNameEn" 
-        idKey="provinceIso" 
-        :values="values[1]" 
-        geojsonIdKey="code_hasc" 
-        :geojson="indonesiaGeoJson"
-        :colorScale1="colorScaleGreen" 
-        :colorScale2="colorScaleRed"
-        :twoColor=true
-        :compareTwoValues=false
-      >
-        <template slot-scope="props">
-          <l-info-control :item="props.currentItem" title="" placeholder="Hover for more info" :type="2"/>
-          <l-reference-chart color1="green" color2="red" title1="Increase" title2="Decrease" position="topright"/>
-        </template>
-      </l-choropleth-layer>
-      <l-choropleth-layer 
-        v-if="typeSelected == 2"
-        :key=2
-        :data="electionResult" 
-        titleKey="provinceNameEn" 
-        idKey="provinceIso" 
-        :values="values[2]" 
-        geojsonIdKey="code_hasc" 
-        :geojson="indonesiaGeoJson"
-        :colorScale1="colorScaleGreen" 
-        :colorScale2="colorScaleRed"
-        :twoColor=true
-        :compareTwoValues=false
-      >
-        <template slot-scope="props">
-          <l-info-control :item="props.currentItem" title="" placeholder="Hover for more info" :type="2"/>
-          <l-reference-chart color1="green" color2="red" title1="Increase" title2="Decrease" position="topright"/>
-        </template>
-      </l-choropleth-layer>
-      <l-choropleth-layer 
-        v-if="typeSelected == 3"
-        :key=3
-        :data="electionResult" 
-        titleKey="provinceNameEn" 
-        idKey="provinceIso" 
-        :values="values[3]" 
-        geojsonIdKey="code_hasc" 
-        :geojson="indonesiaGeoJson"
-        :colorScale1="colorScaleGreen" 
-        :colorScale2="colorScaleRed"
-        :twoColor=true
-        :compareTwoValues=false
-      >
-        <template slot-scope="props">
-          <l-info-control :item="props.currentItem" title="" placeholder="Hover for more info" :type="3"/>
-          <l-reference-chart color1="green" color2="" title1="Increase" title2="" position="topright"/>
-        </template>
-      </l-choropleth-layer>
-    </l-map>
-    <Summary :type="typeSelected"/>
-    <Analysis :type="typeSelected" />
+      
+      <l-map :center="[-0.7893, 113.9213]" :zoom="5" style="height: 400px;margin: 20px 0;" :options="mapOptions">
+        <l-choropleth-layer 
+          v-if="typeSelected == 0"
+          :key=0
+          :data="electionResult" 
+          titleKey="provinceNameEn" 
+          idKey="provinceIso" 
+          geojsonIdKey="code_hasc" 
+          :values="values[0]" 
+          :geojson="indonesiaGeoJson"
+          :colorScale1="colorScaleRed" 
+          :colorScale2="colorScaleBlue"
+          :twoColor=true
+          :compareTwoValues=true
+        >
+          <template slot-scope="props">
+            <l-info-control :item="props.currentItem" title="" placeholder="Hover for more info" :type="1"/>
+            <l-reference-chart color1="blue" color2="red" title1="Jokowi" title2="Prabowo" position="topright"/>
+          </template>
+        </l-choropleth-layer>
+        <l-choropleth-layer 
+          v-if="typeSelected == 1"
+          :key=1
+          :data="electionResult" 
+          titleKey="provinceNameEn" 
+          idKey="provinceIso" 
+          :values="values[1]" 
+          geojsonIdKey="code_hasc" 
+          :geojson="indonesiaGeoJson"
+          :colorScale1="colorScaleGreen" 
+          :colorScale2="colorScaleRed"
+          :twoColor=true
+          :compareTwoValues=false
+        >
+          <template slot-scope="props">
+            <l-info-control :item="props.currentItem" title="" placeholder="Hover for more info" :type="2"/>
+            <l-reference-chart color1="green" color2="red" title1="Increase" title2="Decrease" position="topright"/>
+          </template>
+        </l-choropleth-layer>
+        <l-choropleth-layer 
+          v-if="typeSelected == 2"
+          :key=2
+          :data="electionResult" 
+          titleKey="provinceNameEn" 
+          idKey="provinceIso" 
+          :values="values[2]" 
+          geojsonIdKey="code_hasc" 
+          :geojson="indonesiaGeoJson"
+          :colorScale1="colorScaleGreen" 
+          :colorScale2="colorScaleRed"
+          :twoColor=true
+          :compareTwoValues=false
+        >
+          <template slot-scope="props">
+            <l-info-control :item="props.currentItem" title="" placeholder="Hover for more info" :type="2"/>
+            <l-reference-chart color1="green" color2="red" title1="Increase" title2="Decrease" position="topright"/>
+          </template>
+        </l-choropleth-layer>
+        <l-choropleth-layer 
+          v-if="typeSelected == 3"
+          :key=3
+          :data="electionResult" 
+          titleKey="provinceNameEn" 
+          idKey="provinceIso" 
+          :values="values[3]" 
+          geojsonIdKey="code_hasc" 
+          :geojson="indonesiaGeoJson"
+          :colorScale1="colorScaleGreen" 
+          :colorScale2="colorScaleRed"
+          :twoColor=true
+          :compareTwoValues=false
+        >
+          <template slot-scope="props">
+            <l-info-control :item="props.currentItem" title="" placeholder="Hover for more info" :type="3"/>
+            <l-reference-chart color1="green" color2="" title1="Increase" title2="" position="topright"/>
+          </template>
+        </l-choropleth-layer>
+      </l-map>
+      <Summary :type="typeSelected"/>
+      <Analysis :type="typeSelected" />
+      <a href="#top"><v-icon style="vertical-align: middle; margin-right: 10px" name="arrow-circle-up"/><span style="vertical-align: middle">Go to top</span></a>
+    </main>
+    <footer>
+      
+      <div class="social">
+        <span>Share:</span>
+        <ul>
+          <li class="social_link"><a href="#"><v-icon class="social_link_button" name="brands/facebook-f"/></a></li>
+          <li class="social_link"><a href="#"><v-icon class="social_link_button" name="brands/twitter"/></a></li>
+        </ul>
+      </div>
+      <span>Contact me on <a href="https://twitter.com/vancassa">Twitter</a>.</span>
+    </footer>
   </div>
 </template>
 
@@ -204,6 +218,48 @@ export default {
 body {
   background-color: #fdeece;
   font-family: 'Lato', sans-serif;
+  margin: 0;
+}
+
+main {
+  padding: 20px;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  padding: 20px;
+}
+
+.social{
+  flex-grow: 1;
+  /* font-size: 12px; */
+}
+
+.social ul {
+  list-style: none;
+  display: inline;
+  margin: 0;
+  padding-left: 10px;
+  vertical-align: middle;
+}
+
+.social_link {
+  list-style: none;
+  display: inline;
+  margin-right: 16px;
+}
+
+.social_link_button {
+  color: black;
+  background-color: white;
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+  cursor: pointer;
+  padding: 5px;
 }
 
 .title, .subtitle {
@@ -255,7 +311,7 @@ body {
 }
 
 .map-type--choice:hover {
-  background-color: #728065;
+  background-color: #658C87;
   color: white;
   transition-property: background-color;
   transition-duration: 0.3s;
@@ -266,9 +322,17 @@ input[type='radio'] {
 }
 
 .type-selected {
-  background-color: #728065;
+  background-color: #658C87;
   color: white;
   transition-property: background-color;
   transition-duration: 0.3s;
+}
+
+a {
+  color: #658C87;
+}
+
+a:visited {
+  color: #658C87;
 }
 </style>
