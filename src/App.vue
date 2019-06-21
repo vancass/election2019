@@ -97,8 +97,8 @@
     </main>
     <footer>
       
-      <div class="social">
-        <span>Share:</span>
+      <span class="social">
+        Share:
         <ul>
           <li class="social_link">
             <a href="#" @click="shareFacebook">
@@ -111,7 +111,7 @@
             </a>
           </li>
         </ul>
-      </div>
+      </span>
       <span>Contact me on <a href="https://twitter.com/vancassa">Twitter</a>.</span>
     </footer>
   </div>
@@ -278,6 +278,7 @@ footer {
   list-style: none;
   display: inline;
   margin-right: 16px;
+  vertical-align: middle;
 }
 
 .social_link_button {
