@@ -4,16 +4,16 @@
         <section v-if="type==0">
             <ol>
                 <li>
-                    The province with the highest percentage of support for Jokowi is Bali. Bali is well known as the base for PDI-P party, the party that backs Jokowi.
+                    The province with the highest percentage of support for Jokowi is <strong>Bali</strong>. Bali is well known as the base for PDI-P party, the party that backs Jokowi.
                 </li>
                 <li>
-                    Papua is the 2nd highest of Jokowi supporters in terms of percentage. This might be mainly because Jokowi has been developing Papua by building infrastructures and such.
+                    <strong>Papua</strong> is the 2nd highest of Jokowi supporters in terms of percentage. This might be mainly because Jokowi has been developing Papua by building infrastructures and such.
                 </li>
                 <li>
-                    Top 3 Prabowo's supporters in terms of percentage are West Sumatra, Aceh, and West Nusa Tenggara, of whom the population mostly consists of religious Muslims.
+                    Top 3 Prabowo's supporters in terms of percentage are <strong>West Sumatra</strong>, <strong>Aceh</strong>, and <strong>West Nusa Tenggara</strong>, of whom the population mostly consists of religious Muslims.
                 </li>
                 <li>
-                    In terms of the number of votes, the top 3 for both Jokowi and Prabowo are: Central Java, East Java, and West Java. This emphasizes the fact that Java island houses most of Indonesia population.
+                    In terms of the number of votes, the top 3 for both Jokowi and Prabowo are: <strong>Central Java</strong>, <strong>East Java</strong>, and <strong>West Java</strong>. This emphasizes the fact that Java island houses most of Indonesia population.
                     Getting all the votes in Java alone can get you to the top even if the other provinces vote against you.
                 </li>
                 <li>
@@ -24,18 +24,18 @@
         <section v-if="type==1">
             <ol>
                 <li>
-                    In 2019, Jokowi managed to strengthen his position in Bali and Papua, increasing his vote percentage from ~70% to ~90% in those two provinces.
+                    In 2019, Jokowi managed to strengthen his position in <strong>Bali</strong> and <strong>Papua</strong>, increasing his vote percentage from ~70% to ~90% in those two provinces.
                 </li>
                 <li>
-                    According to the news and opinion, North Sulawesi's increase in support for Jokowi is because during Jokowi's term, the development of the area can be felt by the citizens<sup>[1][2]</sup>.
+                    According to the news and opinion, <strong>North Sulawesi</strong>'s increase in support for Jokowi is because during Jokowi's term, the development of the area can be felt by the citizens<sup>[1][2]</sup>.
                     We can also take note that North Sulawesi is well-known as the base for PDI-P and Golkar, who back Jokowi this time.
                 </li>
                 <li>
-                    Jokowi has a huge decrease of support in Aceh. Aceh is one of the provinces with the highest number of radical Muslims. 
+                    Jokowi has a huge decrease of support in <strong>Aceh</strong>. Aceh is one of the provinces with the highest number of radical Muslims. 
                     On the other hand, there's a huge increase of support for Jokowi in East Nusa Tenggara, a province with Christian majority.
                 </li>
                 <li>
-                    Jokowi's decrease of support in South Sulawesi is mainly because he was never that popular in South Sulawesi. 
+                    Jokowi's decrease of support in <strong>South Sulawesi</strong> is mainly because he was never that popular in South Sulawesi. 
                     In the previous election, the people voted for him because his running mate, Jusuf Kalla, was from the province <sup>[3]</sup>. 
                     Interestingly, even though Jusuf Kalla declared his support for Jokowi for the 2019 election, there is still huge decrease of votes from South Sulawesi. 
                     The biggest reason for the voters' swing to Prabowo might be because his running mate, Sandiaga Uno, is a descendant of the Bugis tribe, one of the tribes in South Sulawesi <sup>[4]</sup>.
@@ -65,10 +65,10 @@
                     Overall, there is an increase in the number of voters compared to the 2014 election. This may be due to more people who came of age, or those who didn't vote before are now voting.
                 </li>
                 <li>
-                    The highest increase in the number of voters can be seen from provinces with the biggest population: provinces in Java island and North Sumatra.
+                    The highest increase in the number of voters can be seen from provinces with the biggest population: <strong>provinces in Java island</strong> and <strong>North Sumatra</strong>.
                 </li>
                 <li>
-                    Jokowi gained a lot of supporters in East Java and Central Java, which are the base of PDI-P. This can be seen as the key to his victory.
+                    Jokowi gained a lot of supporters in <strong>East Java</strong> and <strong>Central Java</strong>, which are the base of PDI-P. This can be seen as the key to his victory.
                 </li>
             </ol>
         </section>
