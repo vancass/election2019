@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <main id="top">
-      <h2 class="title">Indonesian Presidential Election 2019</h2>
+      <h2 class="title">Indonesian Presidential Election 2019 Map</h2>
       <h5 class="subtitle">Interactive summary and analysis</h5>
       <div class="map-type">
         <div class="map-type--choice" v-for="(type, index) in mapTypes" :key="index" :class="{'type-selected' : typeSelected === index}">
@@ -90,15 +90,26 @@
       </l-map>
       <Summary :type="typeSelected"/>
       <Analysis :type="typeSelected" />
-      <a href="#top"><v-icon style="vertical-align: middle; margin-right: 10px" name="arrow-circle-up"/><span style="vertical-align: middle">Go to top</span></a>
+      <a href="#top">
+        <v-icon style="vertical-align: middle; margin-right: 10px" name="arrow-circle-up"/>
+        <span style="vertical-align: middle">Go to top</span>
+      </a>
     </main>
     <footer>
       
       <div class="social">
         <span>Share:</span>
         <ul>
-          <li class="social_link"><a href="#"><v-icon class="social_link_button" name="brands/facebook-f"/></a></li>
-          <li class="social_link"><a href="#"><v-icon class="social_link_button" name="brands/twitter"/></a></li>
+          <li class="social_link">
+            <a href="#" @click="shareFacebook">
+              <v-icon class="social_link_button" name="brands/facebook-f"/>
+            </a>
+          </li>
+          <li class="social_link">
+            <a href="#" @click="shareTwitter">
+              <v-icon class="social_link_button" name="brands/twitter"/>
+            </a>
+          </li>
         </ul>
       </div>
       <span>Contact me on <a href="https://twitter.com/vancassa">Twitter</a>.</span>
@@ -210,6 +221,24 @@ export default {
     }
   },
   computed: {
+  },
+  methods: {
+    shareFacebook: function(e) {
+      e.preventDefault();
+      window.open(
+        'https://www.facebook.com/sharer/sharer.php?u=https://vancass.github.io/election2019/',
+        'pop',
+        'width=600, height=400, scrollbars=no',
+      );
+    },
+    shareTwitter: function(e) {
+      e.preventDefault();
+      window.open(
+        'https://twitter.com/intent/tweet?url=https://vancass.github.io/election2019/&text=Indonesian Presidential Election 2019 Map&via=vancassa',
+        'pop',
+        'width=600, height=400, scrollbars=no',
+      );
+    }
   }
 }
 </script>
